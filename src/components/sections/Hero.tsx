@@ -75,7 +75,7 @@ export default function Hero() {
                         Book Intro Call
                     </a>
                     <a
-                        href="/work"
+                        href="#portfolio"
                         className="btn-ghost h-14 px-8 text-[15px]"
                     >
                         Our Work

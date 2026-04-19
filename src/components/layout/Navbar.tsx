@@ -52,7 +52,7 @@ export default function Navbar() {
                 <div className="flex items-center gap-4">
                     <motion.div whileTap={{ scale: 0.98 }} className="hidden md:block">
                         <NextLink
-                            href="#cta"
+                            href="#booking"
                             className="btn-primary h-11 px-6 text-sm no-underline"
                         >
                             Book Call
@@ -90,7 +90,7 @@ export default function Navbar() {
                             </NextLink>
                         ))}
                         <NextLink
-                            href="#cta"
+                            href="#booking"
                             onClick={() => setIsOpen(false)}
                             className="btn-primary w-full h-14 no-underline"
                         >

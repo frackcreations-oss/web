@@ -12,6 +12,7 @@ import Process from "@/components/sections/Process";
 
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
+import Booking from "@/components/sections/Booking";
 
 export default function Home() {
   return (
@@ -23,12 +24,13 @@ export default function Home() {
       <Comparison />
 
       <Benefits />
-      <div id="portfolio" className="relative bg-black">
+      <div id="portfolio" className="relative bg-black scroll-mt-24">
         <Portfolio />
       </div>
 
       <Testimonials />
       <Process />
+      <Booking />
 
       <FAQ />
 
