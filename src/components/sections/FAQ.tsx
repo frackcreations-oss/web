@@ -93,9 +93,12 @@ export default function FAQ() {
                     viewport={{ once: true }}
                     className="text-center p-12 card-premium rounded-[2rem] max-w-2xl mx-auto"
                 >
-                    <p className="text-xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-8">Can't find your answer?</p>
-                    <a href="mailto:hello@frack.com" className="btn-primary h-14 px-10 text-[15px] mx-auto group w-[fit-content]">
-                        Send us a Mail
+                    <p className="text-xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-8">Can&apos;t find your answer?</p>
+                    <a
+                        href="mailto:frackcreations@gmail.com?subject=Question%20from%20Frack%20website"
+                        className="btn-primary h-14 px-10 text-[15px] mx-auto group inline-flex w-fit items-center justify-center"
+                    >
+                        Email us
                         <Mail className="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
                     </a>
                 </motion.div>

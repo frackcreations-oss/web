@@ -43,7 +43,7 @@ export default function Footer() {
                             The dedicated design and development team for startups who need results, not just pretty pictures.
                         </p>
                         <div className="flex gap-3">
-                            <a href="mailto:hello@frack.studio" className="flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-[#111111] border border-[#1F1F1F] text-[#F5F5F5] hover:border-[#C8FF00] hover:text-[#C8FF00] transition-all duration-300 font-medium text-sm">
+                            <a href="mailto:frackcreations@gmail.com?subject=Project%20inquiry%20from%20Frack%20website" className="flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-[#111111] border border-[#1F1F1F] text-[#F5F5F5] hover:border-[#C8FF00] hover:text-[#C8FF00] transition-all duration-300 font-medium text-sm">
                                 <Mail size={16} />
                                 Start a project
                             </a>
