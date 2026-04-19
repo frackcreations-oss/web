@@ -100,6 +100,26 @@ export default function Footer() {
                     </div>
                 </div>
 
+                {/* Arabic copy — indexable for Saudi / GCC search (تطوير مواقع، متاجر إلكترونية، إلخ) */}
+                <div
+                    dir="rtl"
+                    lang="ar"
+                    className="arabic-text mb-16 rounded-[2rem] border border-[#1F1F1F] bg-[#0C0C0C] p-8 md:p-10"
+                >
+                    <h2 className="text-[#F5F5F5] text-lg md:text-xl font-bold mb-4 tracking-tight">
+                        فراك — تطوير مواقع ومتاجر إلكترونية في السعودية والخليج
+                    </h2>
+                    <p className="text-[#A8A8A8] text-[15px] md:text-[17px] leading-[1.85] font-medium">
+                        نصمّم ونبرمج مواقع احترافية، متاجر إلكترونية، وتطبيقات ويب وسحابية بسرعة الإطلاق
+                        وجودة عالية. إذا كنت تبحث عن{" "}
+                        <span className="text-[#C8C8C8]">تطوير مواقع</span>،{" "}
+                        <span className="text-[#C8C8C8]">تطوير متاجر إلكترونية</span>،{" "}
+                        <span className="text-[#C8C8C8]">تصميم مواقع</span>، أو{" "}
+                        <span className="text-[#C8C8C8]">برمجة مواقع</span> للشركات الناشئة والفرق
+                        المنتجة — نساعدك من الفكرة حتى الإطلاق مع تجربة مستخدم واضحة وأداء قوي.
+                    </p>
+                </div>
+
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-[#1F1F1F] flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-[#666666] text-sm font-medium tracking-wide">

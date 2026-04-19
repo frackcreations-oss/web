@@ -24,6 +24,10 @@
   font-family: var(--font-inter);
 }
 
+.arabic-text {
+  font-family: var(--font-arabic), "Segoe UI", Tahoma, system-ui, sans-serif;
+}
+
 @layer base {
   body {
     background-color: var(--color-background);
