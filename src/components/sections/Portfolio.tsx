@@ -4,13 +4,30 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
-const projects = [
+type ImageFit = 'cover' | 'contain';
+
+const projects: {
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  alt: string;
+  objectPosition: string;
+  size: string;
+  imageFit?: ImageFit;
+  /** Inset for contained images so the full mockup stays visible */
+  containInset?: string;
+  /** Tailwind classes for the image region height */
+  imageAreaClass?: string;
+  quality?: number;
+}[] = [
   {
     title: 'AI Dashboard',
     category: 'Product Design',
     description: 'Analytics workspace with live KPIs and model health for an ML ops team.',
     image: '/portfolio/portfolio-ai-dashboard.png',
     alt: 'Dark analytics dashboard UI with charts',
+    objectPosition: 'center top',
     size: 'col-span-1 md:col-span-2 h-[500px]',
   },
   {
@@ -19,7 +36,12 @@ const projects = [
     description: 'Carbon tracking and habits for a climate-focused consumer app.',
     image: '/portfolio/portfolio-ecosmart.png',
     alt: 'Eco sustainability mobile app mockup',
-    size: 'col-span-1 h-[600px] md:mt-24',
+    objectPosition: 'center center',
+    size: 'col-span-1 h-[640px] md:mt-24',
+    imageFit: 'contain',
+    containInset: 'inset-2 md:inset-4',
+    imageAreaClass: 'h-[64%] min-h-[260px] md:min-h-[300px]',
+    quality: 96,
   },
   {
     title: 'Nexus Branding',
@@ -27,6 +49,7 @@ const projects = [
     description: 'Visual system, motion rules, and launch assets for a B2B platform.',
     image: '/portfolio/portfolio-nexus-brand.png',
     alt: 'Abstract geometric brand identity artwork',
+    objectPosition: 'center center',
     size: 'col-span-1 h-[450px]',
   },
   {
@@ -35,7 +58,12 @@ const projects = [
     description: 'Marketing site and component library shipped with Next.js and a design token pipeline.',
     image: '/portfolio/portfolio-lumina-web.png',
     alt: 'Modern dark website on laptop screen',
-    size: 'col-span-1 h-[550px] md:-mt-32',
+    objectPosition: 'center center',
+    size: 'col-span-1 h-[640px] md:-mt-32',
+    imageFit: 'contain',
+    containInset: 'inset-2 md:inset-5',
+    imageAreaClass: 'h-[64%] min-h-[260px] md:min-h-[300px]',
+    quality: 96,
   },
   {
     title: 'Crypto Wallet',
@@ -43,6 +71,7 @@ const projects = [
     description: 'Secure onboarding, portfolio view, and transaction flows for a non-custodial wallet.',
     image: '/portfolio/portfolio-crypto-wallet.png',
     alt: 'Fintech crypto wallet dark UI concept',
+    objectPosition: 'center center',
     size: 'col-span-1 h-[400px]',
   },
 ];
@@ -75,50 +104,80 @@ export default function Portfolio() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-          {projects.map((project, idx) => (
+          {projects.map((project, idx) => {
+            const fit = project.imageFit ?? 'cover';
+            const areaClass =
+              project.imageAreaClass ?? 'h-[58%] min-h-[200px]';
+            const quality = project.quality ?? 92;
+            const inset = project.containInset ?? 'inset-3 md:inset-4';
+
+            return (
             <motion.article
               key={project.title}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className={`${project.size} relative group overflow-hidden rounded-[2rem] card-premium flex flex-col cursor-pointer`}
+              className={`${project.size} relative group flex flex-col overflow-hidden rounded-[2rem] card-premium cursor-pointer bg-[#111111]`}
             >
-              <div className="absolute inset-0 z-0">
-                <Image
-                  src={project.image}
-                  alt={project.alt}
-                  fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={idx < 2}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/30 to-transparent opacity-60" />
+              <div
+                className={`relative w-full shrink-0 overflow-hidden ${areaClass} ${fit === 'contain' ? 'bg-[#0B0B0B]' : 'bg-[#0D0D0D]'}`}
+              >
+                {fit === 'contain' ? (
+                  <div className={`absolute ${inset}`}>
+                    <Image
+                      src={project.image}
+                      alt={project.alt}
+                      fill
+                      quality={quality}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 42vw"
+                      priority={idx < 2}
+                      className="object-contain object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                      style={{ objectPosition: project.objectPosition }}
+                    />
+                  </div>
+                ) : (
+                  <>
+                    <Image
+                      src={project.image}
+                      alt={project.alt}
+                      fill
+                      quality={quality}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 38vw"
+                      priority={idx < 2}
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                      style={{ objectPosition: project.objectPosition }}
+                    />
+                    <div
+                      className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#0A0A0A]/90 to-transparent"
+                      aria-hidden
+                    />
+                  </>
+                )}
               </div>
 
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#080808]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-
-              <div className="relative z-20 flex flex-col justify-between h-full p-8 md:p-10">
-                <div className="flex justify-between items-start gap-4">
-                  <span className="inline-block px-3 py-1 rounded border border-[#1F1F1F] bg-[#0A0A0A]/60 text-[#888888] text-xs font-bold uppercase tracking-[0.15em] backdrop-blur-md">
+              {/* Copy: solid panel — text never competes with the artwork */}
+              <div className="relative z-10 flex min-h-0 flex-1 flex-col justify-between gap-5 border-t border-[#1F1F1F] bg-[#0A0A0A] p-6 md:p-8">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="inline-block rounded border border-[#252525] bg-[#111111] px-3 py-1 text-xs font-bold uppercase tracking-[0.15em] text-[#B0B0B0]">
                     {project.category}
                   </span>
-                  <div className="w-12 h-12 shrink-0 rounded-full border border-[#1F1F1F] bg-[#080808]/80 text-[#F5F5F5] flex items-center justify-center -rotate-45 group-hover:bg-[#F5F5F5] group-hover:text-[#080808] transition-all duration-300">
-                    <ArrowUpRight size={20} />
+                  <div className="-rotate-45 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#252525] bg-[#111111] text-[#F5F5F5] transition-all duration-300 group-hover:rotate-0 group-hover:border-[#F5F5F5] group-hover:bg-[#F5F5F5] group-hover:text-[#080808]">
+                    <ArrowUpRight size={18} />
                   </div>
                 </div>
-                <div className="translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out space-y-3">
-                  <h3 className="text-3xl md:text-4xl font-bold text-[#F5F5F5] tracking-[-0.03em]">
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-bold tracking-[-0.03em] text-[#F5F5F5] md:text-3xl">
                     {project.title}
                   </h3>
-                  <p className="text-[#A0A0A0] text-sm md:text-[15px] leading-relaxed max-w-md opacity-90 group-hover:opacity-100 line-clamp-3 md:line-clamp-none">
+                  <p className="text-[15px] leading-relaxed text-[#B8B8B8]">
                     {project.description}
                   </p>
                 </div>
               </div>
             </motion.article>
-          ))}
+            );
+          })}
         </div>
 
         <div className="mt-24 text-center">
