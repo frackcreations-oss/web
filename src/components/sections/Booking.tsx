@@ -3,10 +3,11 @@
 import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
 
-/** Your Calendly event URL, e.g. https://calendly.com/your-name/intro-call */
+const DEFAULT_BOOKING =
+  'https://calendly.com/frackcreations/30min';
+
 const bookingUrl =
-  process.env.NEXT_PUBLIC_BOOKING_URL?.trim() ||
-  'https://calendly.com';
+  process.env.NEXT_PUBLIC_BOOKING_URL?.trim() || DEFAULT_BOOKING;
 
 export default function Booking() {
   return (
@@ -31,7 +32,7 @@ export default function Booking() {
             Pick a time that works for you. You&apos;ll get a calendar invite and a short
             prep note so we make the most of 30 minutes.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <div className="flex justify-center pt-2">
             <a
               href={bookingUrl}
               target="_blank"
@@ -40,11 +41,6 @@ export default function Booking() {
             >
               Schedule a call
             </a>
-            <p className="text-[#555555] text-sm max-w-xs sm:text-left">
-              Paste your Calendly event link in{" "}
-              <code className="text-[#888888] text-xs">NEXT_PUBLIC_BOOKING_URL</code>{" "}
-              (Vercel → Environment Variables), then redeploy.
-            </p>
           </div>
         </motion.div>
       </div>
