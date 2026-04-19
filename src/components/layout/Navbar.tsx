@@ -13,6 +13,14 @@ const navLinks = [
     { name: "Testimonials", href: "#testimonials" },
 ];
 
+function scrollToBookingSection(e: React.MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    document.getElementById("booking")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+    });
+}
+
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -51,12 +59,13 @@ export default function Navbar() {
 
                 <div className="flex items-center gap-4">
                     <motion.div whileTap={{ scale: 0.98 }} className="hidden md:block">
-                        <NextLink
+                        <a
                             href="#booking"
-                            className="btn-primary h-11 px-6 text-sm no-underline"
+                            onClick={scrollToBookingSection}
+                            className="btn-primary h-11 px-6 text-sm no-underline inline-flex items-center justify-center"
                         >
                             Book Call
-                        </NextLink>
+                        </a>
                     </motion.div>
 
                     {/* Mobile Button */}
@@ -89,13 +98,16 @@ export default function Navbar() {
                                 {link.name}
                             </NextLink>
                         ))}
-                        <NextLink
+                        <a
                             href="#booking"
-                            onClick={() => setIsOpen(false)}
-                            className="btn-primary w-full h-14 no-underline"
+                            onClick={(e) => {
+                                setIsOpen(false);
+                                scrollToBookingSection(e);
+                            }}
+                            className="btn-primary w-full h-14 no-underline inline-flex items-center justify-center text-center"
                         >
                             Book Call
-                        </NextLink>
+                        </a>
                     </motion.div>
                 )}
             </AnimatePresence>

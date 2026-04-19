@@ -13,7 +13,7 @@ export default function Booking() {
   return (
     <section
       id="booking"
-      className="section-padding bg-[#080808] border-t border-[#1F1F1F] scroll-mt-28"
+      className="section-padding bg-[#080808] border-t border-[#1F1F1F] scroll-mt-32 md:scroll-mt-36"
     >
       <div className="container-px mx-auto max-w-3xl text-center">
         <motion.div
