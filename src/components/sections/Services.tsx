@@ -14,7 +14,11 @@ import {
     Palette,
     Presentation,
     Search,
-    Share2
+    Share2,
+    MessageCircle,
+    Bot,
+    Globe2,
+    Sparkles,
 } from 'lucide-react';
 
 const specialities = [
@@ -24,6 +28,8 @@ const specialities = [
     { name: "Functional Prototypes", icon: <Waypoints size={28} strokeWidth={1.5} /> },
     { name: "MVP Sprints", icon: <FastForward size={28} strokeWidth={1.5} /> },
     { name: "AI-Powered SEO", icon: <Search size={28} strokeWidth={1.5} /> },
+    { name: "WhatsApp AI Bots", icon: <MessageCircle size={28} strokeWidth={1.5} /> },
+    { name: "Website Chatbots", icon: <Bot size={28} strokeWidth={1.5} /> },
 ];
 
 const designOutputs = [
@@ -33,6 +39,8 @@ const designOutputs = [
     { name: "Websites + Brands", icon: <Palette size={28} strokeWidth={1.5} /> },
     { name: "Pitch Decks", icon: <Presentation size={28} strokeWidth={1.5} /> },
     { name: "Social Media Marketing", icon: <Share2 size={28} strokeWidth={1.5} /> },
+    { name: "AI Websites", icon: <Globe2 size={28} strokeWidth={1.5} /> },
+    { name: "AI SaaS", icon: <Sparkles size={28} strokeWidth={1.5} /> },
 ];
 
 export default function Services() {
