@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Phudu, Syne, Plus_Jakarta_Sans, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/seo/JsonLd";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { SITE_URL } from "@/lib/site";
 
 const interFixed = Inter({
@@ -118,6 +119,7 @@ export default function RootLayout({
       >
         <JsonLd />
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );
