@@ -3,15 +3,9 @@
 import { useState, useEffect } from "react";
 import NextLink from "next/link";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-    { name: "Process", href: "#process" },
-    { name: "Our Work", href: "#portfolio" },
-    { name: "Services", href: "#services" },
-    { name: "Testimonials", href: "#testimonials" },
-];
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import { useDictionary, useLocale } from "@/context/LocaleContext";
 
 function scrollToBookingSection(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
@@ -22,8 +16,17 @@ function scrollToBookingSection(e: React.MouseEvent<HTMLAnchorElement>) {
 }
 
 export default function Navbar() {
+    const dict = useDictionary();
+    const locale = useLocale();
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+
+    const navLinks = [
+        { name: dict.nav.process, href: "#process" },
+        { name: dict.nav.work, href: "#portfolio" },
+        { name: dict.nav.services, href: "#services" },
+        { name: dict.nav.testimonials, href: "#testimonials" },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -39,36 +42,37 @@ export default function Navbar() {
             animate={{ y: 20, opacity: 1 }}
             className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none"
         >
-            <div className={`flex items-center justify-between w-full max-w-5xl px-6 py-3 rounded-full border border-[#1F1F1F] bg-[#111111]/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] pointer-events-auto transition-all duration-500 ${scrolled ? "py-2 bg-[#111111]/80" : ""}`}>
-                <NextLink href="/" className="group flex items-center gap-2">
+            <div className={`flex items-center justify-between w-full max-w-5xl px-4 md:px-6 py-3 rounded-full border border-[#1F1F1F] bg-[#111111]/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)] pointer-events-auto transition-all duration-500 ${scrolled ? "py-2 bg-[#111111]/80" : ""}`}>
+                <NextLink href={`/${locale}`} className="group flex items-center gap-2 shrink-0">
                     <img src="/assets/logow.png" alt="Frack Logo" className="h-8 md:h-[40px] w-auto object-contain brightness-0 invert" />
                 </NextLink>
 
-                {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center space-x-1">
+                <nav className="hidden lg:flex items-center space-x-1">
                     {navLinks.map((link) => (
                         <NextLink
-                            key={link.name}
+                            key={link.href}
                             href={link.href}
-                            className="px-4 py-2 text-[14px] font-medium tracking-tight text-[#888888] hover:text-[#F5F5F5] transition-colors rounded-full hover:bg-white/5"
+                            className="px-3 py-2 text-[14px] font-medium tracking-tight text-[#888888] hover:text-[#F5F5F5] transition-colors rounded-full hover:bg-white/5"
                         >
                             {link.name}
                         </NextLink>
                     ))}
                 </nav>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 md:gap-3">
+                    <div className="hidden sm:block">
+                        <LanguageSwitcher compact />
+                    </div>
                     <motion.div whileTap={{ scale: 0.98 }} className="hidden md:block">
                         <a
                             href="#booking"
                             onClick={scrollToBookingSection}
-                            className="btn-primary h-11 px-6 text-sm no-underline inline-flex items-center justify-center"
+                            className="btn-primary h-11 px-5 text-sm no-underline inline-flex items-center justify-center whitespace-nowrap"
                         >
-                            Book Call
+                            {dict.nav.bookCall}
                         </a>
                     </motion.div>
 
-                    {/* Mobile Button */}
                     <button
                         className="md:hidden p-2 text-[#888888] hover:text-[#F5F5F5]"
                         onClick={() => setIsOpen(!isOpen)}
@@ -79,7 +83,6 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile Nav */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -88,9 +91,10 @@ export default function Navbar() {
                         exit={{ opacity: 0, scale: 0.95, y: 10 }}
                         className="fixed inset-x-4 top-[80px] z-[60] bg-[#111111] border border-[#1F1F1F] rounded-[2rem] p-6 flex flex-col items-center space-y-4 md:hidden shadow-2xl pointer-events-auto"
                     >
+                        <LanguageSwitcher />
                         {navLinks.map((link) => (
                             <NextLink
-                                key={link.name}
+                                key={link.href}
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
                                 className="w-full text-center py-3 text-lg font-medium text-[#888888] hover:text-[#F5F5F5] transition-colors border-b border-[#1F1F1F] last:border-0"
@@ -106,7 +110,7 @@ export default function Navbar() {
                             }}
                             className="btn-primary w-full h-14 no-underline inline-flex items-center justify-center text-center"
                         >
-                            Book Call
+                            {dict.nav.bookCall}
                         </a>
                     </motion.div>
                 )}

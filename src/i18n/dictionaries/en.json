@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "title": "Frack — Web & e‑commerce development | Design, AI & chatbots",
+    "description": "Frack designs and builds web apps, SaaS, e‑commerce, WhatsApp AI bots, and Meta chatbots. Serving startups worldwide, including Saudi Arabia & the Gulf."
+  },
+  "nav": {
+    "process": "Process",
+    "work": "Our Work",
+    "services": "Services",
+    "testimonials": "Testimonials",
+    "bookCall": "Book Call"
+  },
+  "hero": {
+    "badge": "Available for New Projects",
+    "titleLine1": "Design that Ships.",
+    "titleLine2": "Software that Scales.",
+    "subtitle": "Ship-fast design and development team that obsesses over the details that move the needle. Unified, premium, and fast. Led by research.",
+    "bookIntro": "Book Intro Call",
+    "ourWork": "Our Work",
+    "statStartups": "Helped startups",
+    "statRaised": "Raised by clients",
+    "statUsers": "Reached users"
+  },
+  "services": {
+    "eyebrow": "We specialize & design",
+    "specialities": [
+      "Product Design",
+      "UX & UI Design",
+      "Design Systems",
+      "Functional Prototypes",
+      "MVP Sprints",
+      "AI-Powered SEO",
+      "WhatsApp AI Bots",
+      "Website Chatbots"
+    ],
+    "outputs": [
+      "Products",
+      "Web Apps",
+      "Mobile Apps",
+      "Websites + Brands",
+      "Pitch Decks",
+      "Social Media Marketing",
+      "AI Websites",
+      "AI SaaS"
+    ]
+  },
+  "comparison": {
+    "title": "Why choose us?",
+    "subtitle": "Check out what Frack offers Vs employees and other agencies. It's quite a lot!",
+    "fulltime": "Full-time Hire",
+    "agencies": "Other agencies",
+    "rows": [
+      { "feature": "Cost", "frack": "$", "fulltime": "$$$$ (High Overhead)", "agencies": "$$" },
+      { "feature": "Senior Designer & Developer", "frack": "Guaranteed", "fulltime": "Hopefully", "agencies": "Maybe" },
+      { "feature": "Turnaround Time", "frack": "48 hours for most projects", "fulltime": "Can take weeks due to other tasks", "agencies": "Weeks, depending on workload" },
+      { "feature": "Start Time", "frack": "Today itself", "fulltime": "Weeks to onboard and train", "agencies": "Days to set up agreements" },
+      { "feature": "Unlimited Revisions", "frack": "Yes, we keep working until it's perfect", "fulltime": "Limited, with extra time constraints", "agencies": "Limited revisions per project" },
+      { "feature": "Scalability", "frack": "Scale up or down with ease", "fulltime": "Possible", "agencies": "Limited by freelancer's capacity" },
+      { "feature": "Flexibility", "frack": "Pause or adjust your subscription anytime", "fulltime": "Locked into salaries and benefits", "agencies": "Inflexible, project-based" }
+    ]
+  },
+  "benefits": {
+    "title": "Why Startups Choose Frack",
+    "traffic": "TRAFFIC",
+    "conv": "CONV.",
+    "items": [
+      { "title": "Built to Perform", "description": "Research-backed design that doesn't just look good — it does its job." },
+      { "title": "Premium Quality", "description": "Obsessive attention to detail from senior designers. Your startup looks like it means business." },
+      { "title": "Fast Delivery", "description": "Most projects ship in 10-14 days. One team, no handoff gaps." }
+    ]
+  },
+  "portfolio": {
+    "titleMain": "Selected",
+    "titleMuted": "Works.",
+    "subtitle": "Case-style snapshots: product, brand, and shipped interfaces.",
+    "startProject": "Start a project",
+    "projects": [
+      { "title": "AI Dashboard", "category": "Product Design", "description": "Analytics workspace with live KPIs and model health for an ML ops team." },
+      { "title": "EcoSmart App", "category": "Mobile Design", "description": "Carbon tracking and habits for a climate-focused consumer app." },
+      { "title": "Nexus Branding", "category": "Identity", "description": "Visual system, motion rules, and launch assets for a B2B platform." },
+      { "title": "Lumina Web", "category": "Development", "description": "Marketing site and component library shipped with Next.js and a design token pipeline." },
+      { "title": "Crypto Wallet", "category": "Fintech", "description": "Secure onboarding, portfolio view, and transaction flows for a non-custodial wallet." }
+    ]
+  },
+  "testimonials": {
+    "badge": "Selected Testimonials",
+    "title": "Talk is cheap, results on the other hand..."
+  },
+  "process": {
+    "title": "How simple it can be",
+    "steps": [
+      { "duration": "~ 10 MINUTES", "title": "1. Onboarding", "description": "A few questions about your goals, timeline, and assets." },
+      { "duration": "~ 10-12 DAYS", "title": "2. Research, Design & Develop", "description": "We study your market, audience, and competitors. Then design and develop." },
+      { "duration": "~ 1-2 DAYS", "title": "3. Launch", "description": "You receive all files and assets. We handle handoff and launch." }
+    ]
+  },
+  "booking": {
+    "title": "Book an intro call",
+    "subtitle": "Pick a time that works for you. You'll get a calendar invite and a short prep note so we make the most of 30 minutes.",
+    "schedule": "Schedule a call"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Got questions? Great! Let's clear some things up.",
+    "emailPrompt": "Can't find your answer?",
+    "emailUs": "Email us",
+    "items": [
+      { "question": "How long does a project take?", "answer": "It depends on the project. Landing page design takes 10 days. With development, 14 days. Full branding is 14 days. For larger Apps, Websites or complex projects, timing varies — book a call and we'll give you a clear timeline." },
+      { "question": "Do you handle development or just design?", "answer": "Both. We design and develop in Next.js and React. We use Rive for animations. If you need an MVP built, contact us and we'll discuss scope." },
+      { "question": "How does the delivery process work?", "answer": "Once you submit a request, our team reviews the brief. You'll receive an initial draft within 48 hours. We work closely with you, incorporating feedback until you're 100% satisfied." },
+      { "question": "Is there a limit to design requests?", "answer": "No limit! However, we work on one request at a time to ensure maximum quality and focus. Once a design is approved, we immediately jump to the next one in your queue." },
+      { "question": "How fast will I receive my designs?", "answer": "For most requests, you can expect an initial draft within 48 hours. Larger projects like full platform designs may take slightly longer, but we maintain constant communication." },
+      { "question": "What if I don't like the design?", "answer": "Your satisfaction is our priority. We offer unlimited revisions and will refine the design until it matches your vision perfectly." },
+      { "question": "Can I get a refund?", "answer": "We allocate dedicated time and resources to each client, so we don't offer refunds. However, we offer the flexibility to pause your service at any time and resume when you're ready." }
+    ]
+  },
+  "footer": {
+    "tagline": "The dedicated design and development team for startups who need results, not just pretty pictures.",
+    "startProject": "Start a project",
+    "frack": "Frack",
+    "socials": "Socials",
+    "legal": "Legal",
+    "navServices": "Services",
+    "navWork": "Our Work",
+    "navProcess": "Process",
+    "navTestimonials": "Testimonials",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "accepting": "Accepting new clients",
+    "rights": "All rights reserved.",
+    "seoTitle": "Frack — Web development, AI bots & e‑commerce worldwide",
+    "seoBody": "We design and build professional websites, e‑commerce stores, web apps, WhatsApp AI bots, Meta chatbots, and AI SaaS — from idea to launch with clear UX and strong performance."
+  },
+  "whatsapp": {
+    "label": "Chat on WhatsApp",
+    "message": "Hi Frack Creations, I'd like to discuss a project."
+  },
+  "language": {
+    "label": "Language"
+  }
+}

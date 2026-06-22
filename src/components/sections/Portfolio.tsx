@@ -3,76 +3,48 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { useDictionary } from '@/context/LocaleContext';
 
 type ImageFit = 'cover' | 'contain';
 
-const projects: {
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  alt: string;
-  objectPosition: string;
-  size: string;
-  imageFit?: ImageFit;
-  /** Inset for contained images so the full mockup stays visible */
-  containInset?: string;
-  /** Tailwind classes for the image region height */
-  imageAreaClass?: string;
-  quality?: number;
-}[] = [
+const projectMeta = [
   {
-    title: 'AI Dashboard',
-    category: 'Product Design',
-    description: 'Analytics workspace with live KPIs and model health for an ML ops team.',
     image: '/portfolio/portfolio-ai-dashboard.png',
     alt: 'Dark analytics dashboard UI with charts',
     objectPosition: 'center center',
     size: 'col-span-1 md:col-span-2 h-[560px] md:h-[580px]',
-    imageFit: 'contain',
+    imageFit: 'contain' as ImageFit,
     containInset: 'inset-2 md:inset-6',
     imageAreaClass: 'h-[62%] min-h-[240px] md:min-h-[280px]',
     quality: 96,
   },
   {
-    title: 'EcoSmart App',
-    category: 'Mobile Design',
-    description: 'Carbon tracking and habits for a climate-focused consumer app.',
     image: '/portfolio/portfolio-ecosmart.png',
     alt: 'Eco sustainability mobile app mockup',
     objectPosition: 'center center',
     size: 'col-span-1 h-[640px] md:mt-24',
-    imageFit: 'contain',
+    imageFit: 'contain' as ImageFit,
     containInset: 'inset-2 md:inset-4',
     imageAreaClass: 'h-[64%] min-h-[260px] md:min-h-[300px]',
     quality: 96,
   },
   {
-    title: 'Nexus Branding',
-    category: 'Identity',
-    description: 'Visual system, motion rules, and launch assets for a B2B platform.',
     image: '/portfolio/portfolio-nexus-brand.png',
     alt: 'Abstract geometric brand identity artwork',
     objectPosition: 'center center',
     size: 'col-span-1 h-[450px]',
   },
   {
-    title: 'Lumina Web',
-    category: 'Development',
-    description: 'Marketing site and component library shipped with Next.js and a design token pipeline.',
     image: '/portfolio/portfolio-lumina-web.png',
     alt: 'Modern dark website on laptop screen',
     objectPosition: 'center center',
     size: 'col-span-1 h-[640px] md:-mt-32',
-    imageFit: 'contain',
+    imageFit: 'contain' as ImageFit,
     containInset: 'inset-2 md:inset-5',
     imageAreaClass: 'h-[64%] min-h-[260px] md:min-h-[300px]',
     quality: 96,
   },
   {
-    title: 'Crypto Wallet',
-    category: 'Fintech',
-    description: 'Secure onboarding, portfolio view, and transaction flows for a non-custodial wallet.',
     image: '/portfolio/portfolio-crypto-wallet.png',
     alt: 'Fintech crypto wallet dark UI concept',
     objectPosition: 'center center',
@@ -81,6 +53,13 @@ const projects: {
 ];
 
 export default function Portfolio() {
+  const dict = useDictionary();
+  const projects = dict.portfolio.projects.map((p, i) => ({
+    ...p,
+    ...projectMeta[i],
+    alt: p.title,
+  }));
+
   return (
     <section className="section-padding bg-[#080808] overflow-hidden py-32">
       <div className="container-px mx-auto">
@@ -91,8 +70,8 @@ export default function Portfolio() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-8xl font-bold text-[#F5F5F5] tracking-[-0.03em] leading-none">
-              Selected <br />
-              <span className="text-[#888888] font-normal">Works.</span>
+              {dict.portfolio.titleMain} <br />
+              <span className="text-[#888888] font-normal">{dict.portfolio.titleMuted}</span>
             </h2>
           </motion.div>
           <motion.div
@@ -102,7 +81,7 @@ export default function Portfolio() {
             className="text-right"
           >
             <p className="text-[#888888] text-xl font-medium max-w-xs ml-auto leading-relaxed">
-              Case-style snapshots: product, brand, and shipped interfaces.
+              {dict.portfolio.subtitle}
             </p>
           </motion.div>
         </div>
@@ -186,7 +165,7 @@ export default function Portfolio() {
 
         <div className="mt-24 text-center">
           <a href="#booking" className="btn-ghost h-14 px-10 text-[15px]">
-            Start a project
+            {dict.portfolio.startProject}
           </a>
         </div>
       </div>

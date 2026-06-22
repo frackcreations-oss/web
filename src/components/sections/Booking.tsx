@@ -2,14 +2,16 @@
 
 import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
+import { useDictionary } from '@/context/LocaleContext';
 
-const DEFAULT_BOOKING =
-  'https://calendly.com/frackcreations/30min';
+const DEFAULT_BOOKING = 'https://calendly.com/frackcreations/30min';
 
 const bookingUrl =
   process.env.NEXT_PUBLIC_BOOKING_URL?.trim() || DEFAULT_BOOKING;
 
 export default function Booking() {
+  const dict = useDictionary();
+
   return (
     <section
       id="booking"
@@ -26,11 +28,10 @@ export default function Booking() {
             <Calendar size={26} strokeWidth={1.5} />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-[#F5F5F5] tracking-[-0.03em] leading-tight">
-            Book an intro call
+            {dict.booking.title}
           </h2>
           <p className="text-[#888888] text-lg md:text-xl font-medium leading-relaxed">
-            Pick a time that works for you. You&apos;ll get a calendar invite and a short
-            prep note so we make the most of 30 minutes.
+            {dict.booking.subtitle}
           </p>
           <div className="flex justify-center pt-2">
             <a
@@ -39,7 +40,7 @@ export default function Booking() {
               rel="noopener noreferrer"
               className="btn-primary h-14 px-10 text-[15px] inline-flex items-center justify-center"
             >
-              Schedule a call
+              {dict.booking.schedule}
             </a>
           </div>
         </motion.div>

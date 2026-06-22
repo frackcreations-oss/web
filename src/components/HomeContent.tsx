@@ -1,40 +1,33 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
-
 import Comparison from "@/components/sections/Comparison";
-
 import Benefits from "@/components/sections/Benefits";
 import Portfolio from "@/components/sections/Portfolio";
-
 import Testimonials from "@/components/sections/Testimonials";
 import Process from "@/components/sections/Process";
-
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
 import Booking from "@/components/sections/Booking";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
-export default function Home() {
+export default function HomeContent() {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
       <Hero />
       <Services />
-
       <Comparison />
-
       <Benefits />
       <div id="portfolio" className="relative bg-black scroll-mt-24">
         <Portfolio />
       </div>
-
       <Testimonials />
       <Process />
       <Booking />
-
       <FAQ />
-
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 }

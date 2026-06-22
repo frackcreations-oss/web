@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Phudu, Syne, Plus_Jakarta_Sans, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/seo/JsonLd";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { SITE_URL } from "@/lib/site";
 
 const interFixed = Inter({
@@ -79,11 +78,12 @@ export const metadata: Metadata = {
   description: descriptionDefault,
   keywords,
   alternates: {
-    canonical: "/",
+    canonical: "/en",
     languages: {
-      "ar-SA": "/",
-      en: "/",
-      "x-default": "/",
+      en: `${SITE_URL}/en`,
+      "ar-SA": `${SITE_URL}/ar`,
+      es: `${SITE_URL}/es`,
+      "x-default": `${SITE_URL}/en`,
     },
   },
   openGraph: {
@@ -119,7 +119,6 @@ export default function RootLayout({
       >
         <JsonLd />
         {children}
-        <WhatsAppButton />
       </body>
     </html>
   );

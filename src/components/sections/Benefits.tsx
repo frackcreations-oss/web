@@ -1,27 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Activity, Square, Zap } from 'lucide-react';
-
-const benefits = [
-    {
-        icon: <Activity size={80} strokeWidth={1} className="text-[#C8FF00] drop-shadow-[0_0_25px_rgba(200,255,0,0.5)]" />,
-        title: "Built to Perform",
-        description: "Research-backed design that doesn't just look good — it does its job."
-    },
-    {
-        icon: <Square size={80} strokeWidth={1} className="rotate-45 text-[#C8FF00] drop-shadow-[0_0_25px_rgba(200,255,0,0.5)]" />,
-        title: "Premium Quality",
-        description: "Obsessive attention to detail from senior designers. Your startup looks like it means business."
-    },
-    {
-        icon: <Zap size={80} strokeWidth={1} className="text-[#C8FF00] drop-shadow-[0_0_25px_rgba(200,255,0,0.5)]" />,
-        title: "Fast Delivery",
-        description: "Most projects ship in 10-14 days. One team, no handoff gaps."
-    }
-];
+import { Zap } from 'lucide-react';
+import { useDictionary } from '@/context/LocaleContext';
 
 export default function Benefits() {
+    const dict = useDictionary();
+    const items = dict.benefits.items;
+
     return (
         <section id="benefits" className="py-24 md:py-32 bg-[#080808] border-t border-[#1F1F1F]">
             <div className="container mx-auto px-6 md:px-12 max-w-[1400px]">
@@ -32,7 +18,7 @@ export default function Benefits() {
                     className="flex flex-col items-center text-center mb-16 md:mb-24"
                 >
                     <h2 className="text-3xl md:text-[44px] font-bold text-[#F5F5F5] tracking-tight leading-tight max-w-2xl">
-                        Why Startups Choose Frack
+                        {dict.benefits.title}
                     </h2>
                 </motion.div>
 
@@ -54,11 +40,11 @@ export default function Benefits() {
                             {/* Analytics Overlay */}
                             <div className="absolute top-0 right-4 flex flex-col gap-1 z-20">
                                 <div className="flex items-center gap-4 text-[10px] font-mono font-bold tracking-widest text-[#888888]">
-                                    <div className="flex items-center gap-1.5"><div className="w-1.5 h-1.5 rounded-full bg-[#C8FF00]" />TRAFFIC</div>
+                                    <div className="flex items-center gap-1.5"><div className="w-1.5 h-1.5 rounded-full bg-[#C8FF00]" />{dict.benefits.traffic}</div>
                                     <span className="text-[#C8FF00]">+20%</span>
                                 </div>
                                 <div className="flex items-center gap-4 text-[10px] font-mono font-bold tracking-widest text-[#666666]">
-                                    <div className="flex items-center gap-1.5"><div className="w-1.5 h-1.5 rounded-full bg-[#666666]" />CONV.</div>
+                                    <div className="flex items-center gap-1.5"><div className="w-1.5 h-1.5 rounded-full bg-[#666666]" />{dict.benefits.conv}</div>
                                     <span>+12%</span>
                                 </div>
                             </div>
@@ -84,8 +70,8 @@ export default function Benefits() {
                         </div>
 
                         <div className="w-full text-left mt-auto z-10">
-                            <h3 className="text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">Built to Perform</h3>
-                            <p className="text-[#888888] leading-relaxed text-[15px] font-medium">Research-backed design that doesn't just look good — it does its job.</p>
+                            <h3 className="text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">{items[0].title}</h3>
+                            <p className="text-[#888888] leading-relaxed text-[15px] font-medium">{items[0].description}</p>
                         </div>
                     </motion.div>
 
@@ -117,8 +103,8 @@ export default function Benefits() {
                         </div>
 
                         <div className="w-full text-left mt-auto z-10">
-                            <h3 className="text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">Premium Quality</h3>
-                            <p className="text-[#888888] leading-relaxed text-[15px] font-medium">Obsessive attention to detail from senior designers. Your startup looks like it means business.</p>
+                            <h3 className="text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">{items[1].title}</h3>
+                            <p className="text-[#888888] leading-relaxed text-[15px] font-medium">{items[1].description}</p>
                         </div>
                     </motion.div>
 
@@ -157,8 +143,8 @@ export default function Benefits() {
                         </div>
 
                         <div className="w-full text-left mt-auto z-10">
-                            <h3 className="text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">Fast Delivery</h3>
-                            <p className="text-[#888888] leading-relaxed text-[15px] font-medium">Most projects ship in 10-14 days. One team, no handoff gaps.</p>
+                            <h3 className="text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">{items[2].title}</h3>
+                            <p className="text-[#888888] leading-relaxed text-[15px] font-medium">{items[2].description}</p>
                         </div>
                     </motion.div>
                 </div>

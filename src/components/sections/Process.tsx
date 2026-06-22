@@ -2,8 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { Clock, Search, Paintbrush, Globe, ChevronRight, Code } from 'lucide-react';
+import { useDictionary } from '@/context/LocaleContext';
 
 export default function Process() {
+    const dict = useDictionary();
+    const steps = dict.process.steps;
+
     return (
         <section id="process" className="py-24 md:py-32 bg-[#080808]">
             <div className="container mx-auto px-6 md:px-8 max-w-[1400px]">
@@ -15,7 +19,7 @@ export default function Process() {
                     className="flex flex-col items-center text-center mb-16 md:mb-24"
                 >
                     <h2 className="text-3xl md:text-[44px] font-bold text-[#F5F5F5] tracking-tight leading-tight max-w-2xl">
-                        How simple it can be
+                        {dict.process.title}
                     </h2>
                 </motion.div>
 
@@ -31,7 +35,7 @@ export default function Process() {
                     >
                         <div className="flex items-center gap-2 mb-8 px-3 py-1.5 w-fit rounded-full bg-[#1A1A1A] border border-[#2A2A2A]">
                             <Clock size={12} className="text-[#888888]" />
-                            <span className="text-[#888888] text-[10px] font-mono tracking-widest font-bold">~ 10 MINUTES</span>
+                            <span className="text-[#888888] text-[10px] font-mono tracking-widest font-bold">{steps[0].duration}</span>
                         </div>
 
                         {/* Graphic Area */}
@@ -58,9 +62,9 @@ export default function Process() {
 
                         {/* Info Area */}
                         <div className="mt-auto">
-                            <h3 className="text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">1. Onboarding</h3>
+                            <h3 className="text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">{steps[0].title}</h3>
                             <p className="text-[#888888] text-[15px] leading-relaxed font-medium">
-                                A few questions about your goals, timeline, and assets.
+                                {steps[0].description}
                             </p>
                         </div>
                     </motion.div>
@@ -75,7 +79,7 @@ export default function Process() {
                     >
                         <div className="flex items-center gap-2 mb-8 px-3 py-1.5 w-fit rounded-full bg-[#1A1A1A] border border-[#2A2A2A]">
                             <Clock size={12} className="text-[#888888]" />
-                            <span className="text-[#888888] text-[10px] font-mono tracking-widest font-bold">~ 10-12 DAYS</span>
+                            <span className="text-[#888888] text-[10px] font-mono tracking-widest font-bold">{steps[1].duration}</span>
                         </div>
 
                         {/* Graphic Area */}
@@ -129,9 +133,9 @@ export default function Process() {
 
                         {/* Info Area */}
                         <div className="mt-auto">
-                            <h3 className="text-[20px] lg:text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">2. Research, Design & Develop</h3>
+                            <h3 className="text-[20px] lg:text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">{steps[1].title}</h3>
                             <p className="text-[#888888] text-[15px] leading-relaxed font-medium">
-                                We study your market, audience, and competitors. Then design and develop.
+                                {steps[1].description}
                             </p>
                         </div>
                     </motion.div>
@@ -146,7 +150,7 @@ export default function Process() {
                     >
                         <div className="flex items-center gap-2 mb-8 px-3 py-1.5 w-fit rounded-full bg-[#1A1A1A] border border-[#2A2A2A]">
                             <Clock size={12} className="text-[#888888]" />
-                            <span className="text-[#888888] text-[10px] font-mono tracking-widest font-bold">~ 1-2 DAYS</span>
+                            <span className="text-[#888888] text-[10px] font-mono tracking-widest font-bold">{steps[2].duration}</span>
                         </div>
 
                         {/* Graphic Area */}
@@ -178,9 +182,9 @@ export default function Process() {
 
                         {/* Info Area */}
                         <div className="mt-auto relative z-10">
-                            <h3 className="text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">3. Launch</h3>
+                            <h3 className="text-[22px] font-bold text-[#F5F5F5] tracking-tight mb-2">{steps[2].title}</h3>
                             <p className="text-[#888888] text-[15px] leading-relaxed font-medium">
-                                You receive all files and assets. We handle handoff and launch.
+                                {steps[2].description}
                             </p>
                         </div>
                     </motion.div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useDictionary } from '@/context/LocaleContext';
 
 const testimonials = [
     {
@@ -51,6 +52,8 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+    const dict = useDictionary();
+
     return (
         <section id="testimonials" className="py-24 md:py-32 bg-[#080808]">
             <div className="container mx-auto px-6 md:px-8 max-w-[1400px]">
@@ -61,10 +64,10 @@ export default function Testimonials() {
                     className="flex flex-col items-center text-center mb-16 md:mb-24"
                 >
                     <div className="mb-6 px-4 py-1.5 rounded-md bg-[#111111] border border-[#1F1F1F] text-[#888888] text-[11px] font-bold tracking-[0.1em] uppercase">
-                        Selected Testimonials
+                        {dict.testimonials.badge}
                     </div>
                     <h2 className="text-3xl md:text-[44px] font-bold text-[#F5F5F5] tracking-tight leading-tight max-w-2xl">
-                        Talk is cheap, results on the other hand...
+                        {dict.testimonials.title}
                     </h2>
                 </motion.div>
 
