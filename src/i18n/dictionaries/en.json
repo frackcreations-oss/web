@@ -72,14 +72,13 @@
   "portfolio": {
     "titleMain": "Selected",
     "titleMuted": "Works.",
-    "subtitle": "Case-style snapshots: product, brand, and shipped interfaces.",
+    "subtitle": "Live products we designed and shipped — click any card to visit.",
     "startProject": "Start a project",
     "projects": [
-      { "title": "AI Dashboard", "category": "Product Design", "description": "Analytics workspace with live KPIs and model health for an ML ops team." },
-      { "title": "EcoSmart App", "category": "Mobile Design", "description": "Carbon tracking and habits for a climate-focused consumer app." },
-      { "title": "Nexus Branding", "category": "Identity", "description": "Visual system, motion rules, and launch assets for a B2B platform." },
-      { "title": "Lumina Web", "category": "Development", "description": "Marketing site and component library shipped with Next.js and a design token pipeline." },
-      { "title": "Crypto Wallet", "category": "Fintech", "description": "Secure onboarding, portfolio view, and transaction flows for a non-custodial wallet." }
+      { "title": "YOYO CRM", "category": "AI SaaS", "description": "AI-powered CRM with WhatsApp inbox, pipeline, smart routing, and suggested replies for sales teams." },
+      { "title": "Maktab Elite", "category": "E‑commerce", "description": "Arabic office furniture store for Saudi Arabia — catalogs, city pages, and WhatsApp-first sales." },
+      { "title": "Wasil", "category": "Product", "description": "Full product website and experience built end-to-end for a modern digital brand." },
+      { "title": "Mohammed Bilal AI", "category": "3D Portfolio", "description": "Immersive 3D developer portfolio with projects, skills, and contact — built for AI & full-stack work." }
     ]
   },
   "testimonials": {

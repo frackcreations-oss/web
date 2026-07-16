@@ -72,14 +72,13 @@
   "portfolio": {
     "titleMain": "أعمال",
     "titleMuted": "مختارة.",
-    "subtitle": "لقطات من منتجات، هويات، وواجهات تم إطلاقها.",
+    "subtitle": "منتجات حية صممناها وأطلقناها — اضغط أي بطاقة لزيارتها.",
     "startProject": "ابدأ مشروعاً",
     "projects": [
-      { "title": "AI Dashboard", "category": "تصميم منتج", "description": "مساحة تحليلات مع KPIs حية وصحة النماذج لفريق ML ops." },
-      { "title": "EcoSmart App", "category": "تصميم جوال", "description": "تتبع الكarbon والعادات لتطبيق استدامة." },
-      { "title": "Nexus Branding", "category": "هوية بصرية", "description": "نظام بصري، قواعد حركة، وأصول إطلاق لمنصة B2B." },
-      { "title": "Lumina Web", "category": "تطوير", "description": "موقع تسويقي ومكتبة مكونات مع Next.js و design tokens." },
-      { "title": "Crypto Wallet", "category": "فintech", "description": "تسجيل آمن، محفظة، وتدفقات معاملات لمحفظة non-custodial." }
+      { "title": "YOYO CRM", "category": "SaaS بالذكاء الاصطناعي", "description": "CRM بالذكاء الاصطناعي مع واتساب، مسار مبيعات، توجيه ذكي، وردود مقترحة." },
+      { "title": "مكتب إيليت", "category": "متجر إلكتروني", "description": "متجر أثاث مكتبي بالعربية للسعودية — كتالوج، صفحات مدن، وبيع عبر واتساب." },
+      { "title": "Wasil", "category": "منتج", "description": "موقع وتجربة منتج كاملة لعلامة رقمية حديثة من البداية للنهاية." },
+      { "title": "Mohammed Bilal AI", "category": "معرض ثلاثي الأبعاد", "description": "معرض مطور ثلاثي الأبعاد مع المشاريع والمهارات والتواصل — للذكاء الاصطناعي والفل ستاك." }
     ]
   },
   "testimonials": {

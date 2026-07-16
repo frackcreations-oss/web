@@ -9,11 +9,16 @@ const orgJsonLd = {
   description:
     "Design and development studio for web apps, SaaS, and e‑commerce. English & Arabic-speaking clients — including Saudi Arabia.",
   slogan: "Design that ships. Software that scales.",
-  knowsLanguage: ["English", "Arabic"],
+  knowsLanguage: ["English", "Arabic", "Spanish"],
   areaServed: [
     { "@type": "Country", name: "Saudi Arabia" },
     { "@type": "Country", name: "United Arab Emirates" },
     { "@type": "Place", name: "Middle East" },
+  ],
+  sameAs: [
+    "https://www.instagram.com/frackcreations/",
+    "https://www.linkedin.com/company/frack-creations",
+    "https://x.com/CreationsF91542",
   ],
   serviceType: [
     "Web development",
@@ -31,7 +36,7 @@ const websiteJsonLd = {
   "@id": `${SITE_URL}/#website`,
   url: SITE_URL,
   name: "Frack",
-  inLanguage: ["en", "ar-SA"],
+  inLanguage: ["en", "ar-SA", "es"],
   publisher: { "@id": `${SITE_URL}/#organization` },
   potentialAction: {
     "@type": "ContactAction",

@@ -72,14 +72,13 @@
   "portfolio": {
     "titleMain": "Trabajos",
     "titleMuted": "seleccionados.",
-    "subtitle": "Instantáneas de producto, marca e interfaces lanzadas.",
+    "subtitle": "Productos en vivo que diseñamos y lanzamos — haz clic para visitar.",
     "startProject": "Iniciar proyecto",
     "projects": [
-      { "title": "AI Dashboard", "category": "Diseño de producto", "description": "Panel de analítica con KPIs en vivo para un equipo ML ops." },
-      { "title": "EcoSmart App", "category": "Diseño móvil", "description": "Seguimiento de carbono y hábitos para app de sostenibilidad." },
-      { "title": "Nexus Branding", "category": "Identidad", "description": "Sistema visual, motion y assets de lanzamiento B2B." },
-      { "title": "Lumina Web", "category": "Desarrollo", "description": "Web de marketing y librería de componentes con Next.js." },
-      { "title": "Crypto Wallet", "category": "Fintech", "description": "Onboarding, cartera y flujos para wallet non-custodial." }
+      { "title": "YOYO CRM", "category": "SaaS con IA", "description": "CRM con IA, inbox de WhatsApp, pipeline, routing inteligente y respuestas sugeridas." },
+      { "title": "Maktab Elite", "category": "E‑commerce", "description": "Tienda de mobiliario de oficina en árabe para Arabia Saudita — catálogo y ventas por WhatsApp." },
+      { "title": "Wasil", "category": "Producto", "description": "Web y experiencia de producto de punta a punta para una marca digital moderna." },
+      { "title": "Mohammed Bilal AI", "category": "Portfolio 3D", "description": "Portfolio 3D inmersivo con proyectos, skills y contacto — para IA y full-stack." }
     ]
   },
   "testimonials": {

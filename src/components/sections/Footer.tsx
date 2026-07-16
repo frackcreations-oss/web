@@ -17,9 +17,9 @@ export default function Footer() {
             { name: dict.footer.navTestimonials, href: "#testimonials" },
         ],
         socials: [
-            { name: "Instagram", href: "#", icon: <Instagram size={16} /> },
-            { name: "X / Twitter", href: "#", icon: <Twitter size={16} /> },
-            { name: "LinkedIn", href: "#", icon: <Linkedin size={16} /> },
+            { name: "Instagram", href: "https://www.instagram.com/frackcreations/", icon: <Instagram size={16} /> },
+            { name: "X / Twitter", href: "https://x.com/CreationsF91542", icon: <Twitter size={16} /> },
+            { name: "LinkedIn", href: "https://www.linkedin.com/company/frack-creations", icon: <Linkedin size={16} /> },
         ],
         legal: [
             { name: dict.footer.privacy, href: "#" },
@@ -69,11 +69,16 @@ export default function Footer() {
                             <ul className="space-y-4">
                                 {footerLinks.socials.map((link) => (
                                     <li key={link.name}>
-                                        <NextLink href={link.href} className="text-[#888888] font-medium text-[15px] hover:text-[#C8FF00] transition-colors flex items-center gap-3 group">
+                                        <a
+                                            href={link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-[#888888] font-medium text-[15px] hover:text-[#C8FF00] transition-colors flex items-center gap-3 group"
+                                        >
                                             {link.icon}
                                             <span>{link.name}</span>
                                             <ArrowUpRight strokeWidth={2} size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all ml-auto text-[#C8FF00]" />
-                                        </NextLink>
+                                        </a>
                                     </li>
                                 ))}
                             </ul>
