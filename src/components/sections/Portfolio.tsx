@@ -74,7 +74,7 @@ function LiveFrame({
 
   return (
     <div
-      className="relative w-full aspect-[16/11] min-h-[260px] sm:min-h-[320px] md:aspect-[21/10] md:min-h-[420px] lg:min-h-[480px] overflow-hidden bg-[#0A0A0A]"
+      className="relative w-full aspect-[16/10] min-h-[240px] sm:min-h-[320px] md:aspect-auto md:min-h-[min(72vh,780px)] overflow-hidden bg-[#0A0A0A]"
       onMouseEnter={() => isDesktop && embed && !iframeFailed && setActive(true)}
       onMouseLeave={() => isDesktop && setActive(false)}
     >
@@ -86,7 +86,7 @@ function LiveFrame({
         priority={priority}
         sizes="100vw"
         className={`object-cover object-top transition-opacity duration-500 ${
-          showScreenshotOnly ? 'opacity-100' : loaded ? 'opacity-20' : 'opacity-80'
+          showScreenshotOnly ? 'opacity-100' : loaded ? 'opacity-0' : 'opacity-80'
         }`}
       />
 
@@ -100,7 +100,7 @@ function LiveFrame({
           className={`absolute inset-0 h-full w-full border-0 bg-[#0A0A0A] ${
             interactive ? 'pointer-events-auto' : 'pointer-events-none'
           }`}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"
           referrerPolicy="no-referrer-when-downgrade"
         />
