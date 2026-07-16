@@ -72,7 +72,7 @@
   "portfolio": {
     "titleMain": "Selected",
     "titleMuted": "Works.",
-    "subtitle": "Live products we designed and shipped — click any card to visit.",
+    "subtitle": "Live previews of products we shipped — interact on desktop, open full-screen on mobile.",
     "startProject": "Start a project",
     "projects": [
       { "title": "Wasil", "category": "Product", "description": "Full product website and experience built end-to-end for a modern digital brand." },

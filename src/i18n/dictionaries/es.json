@@ -72,7 +72,7 @@
   "portfolio": {
     "titleMain": "Trabajos",
     "titleMuted": "seleccionados.",
-    "subtitle": "Productos en vivo que diseñamos y lanzamos — haz clic para visitar.",
+    "subtitle": "Previews en vivo de productos que lanzamos — interactúa en escritorio; en móvil abre el sitio completo.",
     "startProject": "Iniciar proyecto",
     "projects": [
       { "title": "Wasil", "category": "Producto", "description": "Web y experiencia de producto de punta a punta para una marca digital moderna." },
