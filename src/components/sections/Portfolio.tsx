@@ -51,7 +51,7 @@ function LiveFrame({
 
   return (
     <div
-      className="relative w-full aspect-[16/11] min-h-[260px] sm:min-h-[300px] md:min-h-[340px] lg:min-h-[380px] overflow-hidden bg-[#0A0A0A]"
+      className="relative w-full aspect-[16/11] min-h-[260px] sm:min-h-[320px] md:aspect-[21/10] md:min-h-[420px] lg:min-h-[480px] overflow-hidden bg-[#0A0A0A]"
       onMouseEnter={() => isDesktop && setActive(true)}
       onMouseLeave={() => isDesktop && setActive(false)}
     >
@@ -61,7 +61,7 @@ function LiveFrame({
         fill
         quality={90}
         priority={priority}
-        sizes="(max-width: 768px) 100vw, 50vw"
+        sizes="100vw"
         className={`object-cover object-top transition-opacity duration-500 ${loaded ? 'opacity-20' : 'opacity-70'}`}
       />
 
@@ -152,8 +152,8 @@ export default function Portfolio() {
           </motion.div>
         </div>
 
-        {/* Uniform large cards — 1 col mobile, 2 col desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+        {/* Full-width large cards on desktop — same size as former Nomada / 3D frames */}
+        <div className="grid grid-cols-1 gap-6 md:gap-10 items-stretch">
           {projects.map((project, idx) => {
             const host = displayHost(project.href);
 
@@ -164,7 +164,7 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, ease: 'easeOut', delay: Math.min(idx * 0.05, 0.25) }}
                 viewport={{ once: true }}
-                className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] md:rounded-[1.75rem] border border-[#1F1F1F] bg-[#0C0C0C] transition-all duration-500 hover:border-[#2E2E2E] hover:shadow-[0_0_0_1px_rgba(200,255,0,0.12),0_24px_48px_rgba(0,0,0,0.45)]"
+                className="group relative flex h-full w-full flex-col overflow-hidden rounded-[1.5rem] md:rounded-[2rem] border border-[#1F1F1F] bg-[#0C0C0C] transition-all duration-500 hover:border-[#2E2E2E] hover:shadow-[0_0_0_1px_rgba(200,255,0,0.12),0_24px_48px_rgba(0,0,0,0.45)]"
               >
                 <div className="pointer-events-none absolute -top-20 left-1/2 h-40 w-64 -translate-x-1/2 rounded-full bg-[#C8FF00]/[0.07] blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
 
