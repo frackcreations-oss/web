@@ -6,12 +6,20 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import { useDictionary } from '@/context/LocaleContext';
 
-/** Order: Wasil first · 3D next · YOYO last — all same large size, all live */
-const projectMeta = [
+type ProjectMeta = {
+  image: string;
+  href: string;
+  /** false when the site blocks iframes (X-Frame / CSP) — show crisp live screenshot instead */
+  embed?: boolean;
+};
+
+/** Order: Wasil first · 3D · Maktab · Care At Heart · YOYO last */
+const projectMeta: ProjectMeta[] = [
   { image: '/portfolio/live-wasil.png', href: 'https://www.getwasil.com/' },
   { image: '/portfolio/live-bilal.png', href: 'https://www.mohammedbilalai.com/' },
   { image: '/portfolio/live-nomada.png', href: 'https://www.nomadamiami.com/' },
-  { image: '/portfolio/live-maktab.png', href: 'https://www.maktabelite.com/' },
+  { image: '/portfolio/live-maktab.png', href: 'https://www.maktabelite.com/', embed: false },
+  { image: '/portfolio/live-careatheart.png', href: 'https://www.careathearthhs.com/', embed: false },
   { image: '/portfolio/live-yoyocrm.png', href: 'https://yoyocrm.io/' },
 ];
 
@@ -38,63 +46,83 @@ function LiveFrame({
   image,
   alt,
   priority,
+  embed = true,
 }: {
   href: string;
   image: string;
   alt: string;
   priority?: boolean;
+  embed?: boolean;
 }) {
   const isDesktop = useIsDesktop();
   const [active, setActive] = useState(false);
   const [loaded, setLoaded] = useState(false);
-  const interactive = isDesktop && active;
+  const [iframeFailed, setIframeFailed] = useState(!embed);
+  const interactive = isDesktop && active && embed && !iframeFailed;
+
+  // If iframe is blocked, onLoad may still fire — detect empty frame after timeout
+  useEffect(() => {
+    if (!embed) return;
+    const t = window.setTimeout(() => {
+      // Keep screenshot visible if embed never meaningfully loaded
+      if (!loaded) setIframeFailed(true);
+    }, 8000);
+    return () => window.clearTimeout(t);
+  }, [embed, loaded]);
+
+  const showScreenshotOnly = !embed || iframeFailed;
 
   return (
     <div
       className="relative w-full aspect-[16/11] min-h-[260px] sm:min-h-[320px] md:aspect-[21/10] md:min-h-[420px] lg:min-h-[480px] overflow-hidden bg-[#0A0A0A]"
-      onMouseEnter={() => isDesktop && setActive(true)}
+      onMouseEnter={() => isDesktop && embed && !iframeFailed && setActive(true)}
       onMouseLeave={() => isDesktop && setActive(false)}
     >
       <Image
         src={image}
         alt={alt}
         fill
-        quality={90}
+        quality={95}
         priority={priority}
         sizes="100vw"
-        className={`object-cover object-top transition-opacity duration-500 ${loaded ? 'opacity-20' : 'opacity-70'}`}
+        className={`object-cover object-top transition-opacity duration-500 ${
+          showScreenshotOnly ? 'opacity-100' : loaded ? 'opacity-20' : 'opacity-80'
+        }`}
       />
 
-      <iframe
-        src={href}
-        title={`${alt} live preview`}
-        loading="lazy"
-        onLoad={() => setLoaded(true)}
-        className={`absolute inset-0 h-full w-full border-0 bg-[#0A0A0A] ${
-          interactive ? 'pointer-events-auto' : 'pointer-events-none'
-        }`}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"
-        referrerPolicy="no-referrer-when-downgrade"
-      />
+      {embed && !iframeFailed && (
+        <iframe
+          src={href}
+          title={`${alt} live preview`}
+          loading="lazy"
+          onLoad={() => setLoaded(true)}
+          onError={() => setIframeFailed(true)}
+          className={`absolute inset-0 h-full w-full border-0 bg-[#0A0A0A] ${
+            interactive ? 'pointer-events-auto' : 'pointer-events-none'
+          }`}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      )}
 
       {!interactive && (
-        <div className="absolute inset-0 z-10 flex items-end justify-center bg-gradient-to-t from-[#080808]/70 via-transparent to-transparent p-4 md:items-center md:bg-transparent md:p-0">
-          <button
-            type="button"
+        <div className="absolute inset-0 z-10 flex items-end justify-center bg-gradient-to-t from-[#080808]/65 via-transparent to-transparent p-4 md:items-center md:bg-transparent md:p-0">
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={(e) => {
-              e.preventDefault();
-              if (isDesktop) {
+              if (isDesktop && embed && !iframeFailed) {
+                e.preventDefault();
                 setActive(true);
-              } else {
-                window.open(href, '_blank', 'noopener,noreferrer');
               }
             }}
             className="mb-2 inline-flex items-center gap-2 rounded-full border border-[#C8FF00]/40 bg-[#0A0A0A]/90 px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-[#C8FF00] shadow-[0_8px_24px_rgba(0,0,0,0.45)] backdrop-blur-md transition hover:bg-[#C8FF00] hover:text-[#080808] md:mb-0 md:opacity-0 md:group-hover:opacity-100"
           >
-            {isDesktop ? 'Click to interact' : 'Open live site'}
+            {isDesktop && embed && !iframeFailed ? 'Click to interact' : 'Open live site'}
             <ExternalLink size={12} />
-          </button>
+          </a>
         </div>
       )}
 
@@ -109,11 +137,21 @@ function LiveFrame({
 
 export default function Portfolio() {
   const dict = useDictionary();
-  const projects = dict.portfolio.projects.map((p, i) => ({
-    ...p,
-    ...projectMeta[i],
-    alt: p.title,
-  }));
+  const projects = dict.portfolio.projects
+    .map((p, i) => {
+      const meta = projectMeta[i];
+      if (!meta) return null;
+      return { ...p, ...meta, alt: p.title, embed: meta.embed !== false };
+    })
+    .filter(Boolean) as Array<{
+    title: string;
+    category: string;
+    description: string;
+    image: string;
+    href: string;
+    alt: string;
+    embed: boolean;
+  }>;
 
   return (
     <section className="section-padding bg-[#080808] overflow-hidden py-24 md:py-32 relative">
@@ -152,7 +190,6 @@ export default function Portfolio() {
           </motion.div>
         </div>
 
-        {/* Full-width large cards on desktop — same size as former Nomada / 3D frames */}
         <div className="grid grid-cols-1 gap-6 md:gap-10 items-stretch">
           {projects.map((project, idx) => {
             const host = displayHost(project.href);
@@ -201,6 +238,7 @@ export default function Portfolio() {
                       image={project.image}
                       alt={project.alt}
                       priority={idx < 2}
+                      embed={project.embed}
                     />
                   </div>
                 </div>
