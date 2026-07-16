@@ -11,13 +11,19 @@ type ProjectMeta = {
   href: string;
   /** false when the site blocks iframes (X-Frame / CSP) — show crisp live screenshot instead */
   embed?: boolean;
+  /** Shift preview up (px) so the frame starts a little scrolled — nicer hero framing */
+  previewScrollY?: number;
 };
 
 /** Order: Wasil first · 3D · Maktab · Care At Heart · YOYO last */
 const projectMeta: ProjectMeta[] = [
   { image: '/portfolio/live-wasil.png', href: 'https://www.getwasil.com/' },
   { image: '/portfolio/live-bilal.png', href: 'https://www.mohammedbilalai.com/' },
-  { image: '/portfolio/live-nomada.png', href: 'https://www.nomadamiami.com/' },
+  {
+    image: '/portfolio/live-nomada.png',
+    href: 'https://www.nomadamiami.com/',
+    previewScrollY: 88,
+  },
   { image: '/portfolio/live-maktab.png', href: 'https://www.maktabelite.com/', embed: false },
   { image: '/portfolio/live-careatheart.png', href: 'https://www.careathearthhs.com/', embed: false },
   { image: '/portfolio/live-yoyocrm.png', href: 'https://yoyocrm.io/' },
@@ -47,12 +53,14 @@ function LiveFrame({
   alt,
   priority,
   embed = true,
+  previewScrollY = 0,
 }: {
   href: string;
   image: string;
   alt: string;
   priority?: boolean;
   embed?: boolean;
+  previewScrollY?: number;
 }) {
   const isDesktop = useIsDesktop();
   const [active, setActive] = useState(false);
@@ -71,6 +79,7 @@ function LiveFrame({
   }, [embed, loaded]);
 
   const showScreenshotOnly = !embed || iframeFailed;
+  const offset = previewScrollY > 0 ? previewScrollY : 0;
 
   return (
     <div
@@ -85,6 +94,7 @@ function LiveFrame({
         quality={95}
         priority={priority}
         sizes="100vw"
+        style={offset ? { objectPosition: `center ${offset}px` } : undefined}
         className={`object-cover object-top transition-opacity duration-500 ${
           showScreenshotOnly ? 'opacity-100' : loaded ? 'opacity-0' : 'opacity-80'
         }`}
@@ -97,6 +107,17 @@ function LiveFrame({
           loading="lazy"
           onLoad={() => setLoaded(true)}
           onError={() => setIframeFailed(true)}
+          style={
+            offset
+              ? {
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: `calc(100% + ${offset}px)`,
+                  transform: `translateY(-${offset}px)`,
+                }
+              : undefined
+          }
           className={`absolute inset-0 h-full w-full border-0 bg-[#0A0A0A] ${
             interactive ? 'pointer-events-auto' : 'pointer-events-none'
           }`}
@@ -151,6 +172,7 @@ export default function Portfolio() {
     href: string;
     alt: string;
     embed: boolean;
+    previewScrollY?: number;
   }>;
 
   return (
@@ -239,6 +261,7 @@ export default function Portfolio() {
                       alt={project.alt}
                       priority={idx < 2}
                       embed={project.embed}
+                      previewScrollY={project.previewScrollY}
                     />
                   </div>
                 </div>
