@@ -24,6 +24,11 @@ const projectMeta = [
   {
     image: '/portfolio/live-bilal.png',
     href: 'https://www.mohammedbilalai.com/',
+    size: 'col-span-1',
+  },
+  {
+    image: '/portfolio/live-nomada.png',
+    href: 'https://www.nomadamiami.com/',
     size: 'col-span-1 md:col-span-2',
   },
 ];
