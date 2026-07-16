@@ -75,11 +75,11 @@
     "subtitle": "Live products we designed and shipped — click any card to visit.",
     "startProject": "Start a project",
     "projects": [
-      { "title": "YOYO CRM", "category": "AI SaaS", "description": "AI-powered CRM with WhatsApp inbox, pipeline, smart routing, and suggested replies for sales teams." },
-      { "title": "Maktab Elite", "category": "E‑commerce", "description": "Arabic office furniture store for Saudi Arabia — catalogs, city pages, and WhatsApp-first sales." },
       { "title": "Wasil", "category": "Product", "description": "Full product website and experience built end-to-end for a modern digital brand." },
-      { "title": "Mohammed Bilal AI", "category": "3D Portfolio", "description": "Immersive 3D developer portfolio with projects, skills, and contact — built for AI & full-stack work." },
-      { "title": "Nómada Miami", "category": "3D Landing", "description": "Bilingual 3D marketing agency landing page for Miami — strategy, ads, web, and lead capture in Spanish & English." }
+      { "title": "Mohammed Bilal AI", "category": "3D Portfolio", "description": "Immersive 3D developer portfolio — live interactive preview. Projects, skills, and contact for AI & full-stack work." },
+      { "title": "Nómada Miami", "category": "3D Landing", "description": "Live bilingual 3D marketing landing for Miami — strategy, ads, web, and lead capture in Spanish & English." },
+      { "title": "Maktab Elite", "category": "E‑commerce", "description": "Arabic office furniture store for Saudi Arabia — catalogs, city pages, and WhatsApp-first sales." },
+      { "title": "YOYO CRM", "category": "AI SaaS", "description": "AI-powered CRM with WhatsApp inbox, pipeline, smart routing, and suggested replies for sales teams." }
     ]
   },
   "testimonials": {

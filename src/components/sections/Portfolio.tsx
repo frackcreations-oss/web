@@ -5,11 +5,35 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import { useDictionary } from '@/context/LocaleContext';
 
-const projectMeta = [
+type ProjectMeta = {
+  image: string;
+  href: string;
+  size: string;
+  live?: boolean;
+  /** Taller frame for 3D sites */
+  tall?: boolean;
+};
+
+/** Order: Wasil first · 3D live next · YOYO last */
+const projectMeta: ProjectMeta[] = [
   {
-    image: '/portfolio/live-yoyocrm.png',
-    href: 'https://yoyocrm.io/',
+    image: '/portfolio/live-wasil.png',
+    href: 'https://www.getwasil.com/',
     size: 'col-span-1 md:col-span-2',
+  },
+  {
+    image: '/portfolio/live-bilal.png',
+    href: 'https://www.mohammedbilalai.com/',
+    size: 'col-span-1 md:col-span-2 lg:col-span-3',
+    live: true,
+    tall: true,
+  },
+  {
+    image: '/portfolio/live-nomada.png',
+    href: 'https://www.nomadamiami.com/',
+    size: 'col-span-1 md:col-span-2 lg:col-span-3',
+    live: true,
+    tall: true,
   },
   {
     image: '/portfolio/live-maktab.png',
@@ -17,18 +41,8 @@ const projectMeta = [
     size: 'col-span-1',
   },
   {
-    image: '/portfolio/live-wasil.png',
-    href: 'https://www.getwasil.com/',
-    size: 'col-span-1',
-  },
-  {
-    image: '/portfolio/live-bilal.png',
-    href: 'https://www.mohammedbilalai.com/',
-    size: 'col-span-1',
-  },
-  {
-    image: '/portfolio/live-nomada.png',
-    href: 'https://www.nomadamiami.com/',
+    image: '/portfolio/live-yoyocrm.png',
+    href: 'https://yoyocrm.io/',
     size: 'col-span-1 md:col-span-2',
   },
 ];
@@ -47,7 +61,6 @@ export default function Portfolio() {
 
   return (
     <section className="section-padding bg-[#080808] overflow-hidden py-32 relative">
-      {/* Soft section atmosphere */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
         style={{
@@ -87,23 +100,19 @@ export default function Portfolio() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {projects.map((project, idx) => {
             const host = displayHost(project.href);
+            const isLive = Boolean(project.live);
 
             return (
-              <motion.a
+              <motion.article
                 key={project.title}
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.08 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.06 }}
                 viewport={{ once: true }}
-                className={`${project.size} group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-[#1F1F1F] bg-[#0C0C0C] no-underline transition-all duration-500 hover:border-[#2E2E2E] hover:shadow-[0_0_0_1px_rgba(200,255,0,0.12),0_24px_48px_rgba(0,0,0,0.45)]`}
+                className={`${project.size} group relative flex flex-col overflow-hidden rounded-[1.75rem] border border-[#1F1F1F] bg-[#0C0C0C] transition-all duration-500 hover:border-[#2E2E2E] hover:shadow-[0_0_0_1px_rgba(200,255,0,0.12),0_24px_48px_rgba(0,0,0,0.45)]`}
               >
-                {/* Card glow */}
                 <div className="pointer-events-none absolute -top-20 left-1/2 h-40 w-64 -translate-x-1/2 rounded-full bg-[#C8FF00]/[0.07] blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
 
-                {/* Browser chrome + screenshot */}
                 <div className="relative p-4 md:p-5 pb-0">
                   <div className="relative overflow-hidden rounded-xl border border-[#252525] bg-[#111111] shadow-[0_12px_40px_rgba(0,0,0,0.5)] ring-1 ring-white/[0.04]">
                     {/* Title bar */}
@@ -114,31 +123,77 @@ export default function Portfolio() {
                         <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
                       </div>
                       <div className="flex min-w-0 flex-1 items-center gap-2 rounded-md border border-[#1F1F1F] bg-[#0A0A0A] px-3 py-1.5">
-                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#C8FF00] shadow-[0_0_6px_rgba(200,255,0,0.7)]" />
+                        <span
+                          className={`h-1.5 w-1.5 shrink-0 rounded-full ${isLive ? 'bg-[#C8FF00] animate-pulse shadow-[0_0_8px_rgba(200,255,0,0.8)]' : 'bg-[#C8FF00]/60'}`}
+                        />
                         <span className="truncate text-[11px] font-medium tracking-tight text-[#888888]">
                           {host}
                         </span>
                       </div>
-                      <ExternalLink
-                        size={12}
-                        className="shrink-0 text-[#555555] transition-colors group-hover:text-[#C8FF00]"
-                      />
+                      {isLive && (
+                        <span className="shrink-0 rounded-full border border-[#C8FF00]/35 bg-[#C8FF00]/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.14em] text-[#C8FF00]">
+                          Live 3D
+                        </span>
+                      )}
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0 text-[#555555] transition-colors hover:text-[#C8FF00]"
+                        aria-label={`Open ${project.title}`}
+                      >
+                        <ExternalLink size={12} />
+                      </a>
                     </div>
 
-                    {/* Live screenshot */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0A0A0A]">
-                      <Image
-                        src={project.image}
-                        alt={project.alt}
-                        fill
-                        quality={95}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw"
-                        priority={idx < 2}
-                        className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                      />
-                      {/* Soft vignette + lime edge on hover */}
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0C0C0C]/50 via-transparent to-transparent" />
-                      <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(ellipse_at_top,rgba(200,255,0,0.08),transparent_55%)]" />
+                    {/* Preview: live iframe for 3D sites, screenshot for others */}
+                    <div
+                      className={`relative w-full overflow-hidden bg-[#0A0A0A] ${
+                        project.tall ? 'aspect-[16/11] md:aspect-[21/11] min-h-[280px] md:min-h-[420px]' : 'aspect-[16/10]'
+                      }`}
+                    >
+                      {isLive ? (
+                        <>
+                          {/* Fallback screenshot while iframe loads */}
+                          <Image
+                            src={project.image}
+                            alt={project.alt}
+                            fill
+                            quality={90}
+                            sizes="100vw"
+                            className="object-cover object-top opacity-40"
+                          />
+                          <iframe
+                            src={project.href}
+                            title={`${project.title} live preview`}
+                            loading="lazy"
+                            className="absolute inset-0 h-full w-full border-0 bg-[#0A0A0A]"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          />
+                          {/* Soft edge fade so iframe feels framed */}
+                          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#0C0C0C]/40 to-transparent" />
+                        </>
+                      ) : (
+                        <a
+                          href={project.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="absolute inset-0 block"
+                        >
+                          <Image
+                            src={project.image}
+                            alt={project.alt}
+                            fill
+                            quality={95}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw"
+                            priority={idx < 2}
+                            className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                          />
+                          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0C0C0C]/50 via-transparent to-transparent" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -149,9 +204,15 @@ export default function Portfolio() {
                     <span className="inline-block rounded-full border border-[#252525] bg-[#111111] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#A0A0A0]">
                       {project.category}
                     </span>
-                    <div className="-rotate-45 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#252525] bg-[#111111] text-[#F5F5F5] transition-all duration-300 group-hover:rotate-0 group-hover:border-[#C8FF00] group-hover:bg-[#C8FF00] group-hover:text-[#080808]">
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="-rotate-45 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#252525] bg-[#111111] text-[#F5F5F5] transition-all duration-300 hover:rotate-0 hover:border-[#C8FF00] hover:bg-[#C8FF00] hover:text-[#080808]"
+                      aria-label={`Visit ${project.title}`}
+                    >
                       <ArrowUpRight size={16} />
-                    </div>
+                    </a>
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-2xl font-bold tracking-[-0.03em] text-[#F5F5F5] md:text-[1.75rem]">
@@ -160,12 +221,17 @@ export default function Portfolio() {
                     <p className="text-[15px] leading-relaxed text-[#9A9A9A]">
                       {project.description}
                     </p>
-                    <p className="pt-1 text-xs font-semibold tracking-wide text-[#C8FF00]/70 transition-colors group-hover:text-[#C8FF00]">
-                      {host} ↗
-                    </p>
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block pt-1 text-xs font-semibold tracking-wide text-[#C8FF00]/80 transition-colors hover:text-[#C8FF00]"
+                    >
+                      {isLive ? `Interact live · ${host} ↗` : `${host} ↗`}
+                    </a>
                   </div>
                 </div>
-              </motion.a>
+              </motion.article>
             );
           })}
         </div>
