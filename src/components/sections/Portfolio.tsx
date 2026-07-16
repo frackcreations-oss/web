@@ -6,43 +6,13 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import { useDictionary } from '@/context/LocaleContext';
 
-type ProjectMeta = {
-  image: string;
-  href: string;
-  size: string;
-  /** Taller preview for immersive / 3D sites */
-  tall?: boolean;
-};
-
-/** Order: Wasil first · 3D next · YOYO last — all live */
-const projectMeta: ProjectMeta[] = [
-  {
-    image: '/portfolio/live-wasil.png',
-    href: 'https://www.getwasil.com/',
-    size: 'col-span-1 md:col-span-2',
-  },
-  {
-    image: '/portfolio/live-bilal.png',
-    href: 'https://www.mohammedbilalai.com/',
-    size: 'col-span-1 md:col-span-2 lg:col-span-3',
-    tall: true,
-  },
-  {
-    image: '/portfolio/live-nomada.png',
-    href: 'https://www.nomadamiami.com/',
-    size: 'col-span-1 md:col-span-2 lg:col-span-3',
-    tall: true,
-  },
-  {
-    image: '/portfolio/live-maktab.png',
-    href: 'https://www.maktabelite.com/',
-    size: 'col-span-1',
-  },
-  {
-    image: '/portfolio/live-yoyocrm.png',
-    href: 'https://yoyocrm.io/',
-    size: 'col-span-1 md:col-span-2',
-  },
+/** Order: Wasil first · 3D next · YOYO last — all same large size, all live */
+const projectMeta = [
+  { image: '/portfolio/live-wasil.png', href: 'https://www.getwasil.com/' },
+  { image: '/portfolio/live-bilal.png', href: 'https://www.mohammedbilalai.com/' },
+  { image: '/portfolio/live-nomada.png', href: 'https://www.nomadamiami.com/' },
+  { image: '/portfolio/live-maktab.png', href: 'https://www.maktabelite.com/' },
+  { image: '/portfolio/live-yoyocrm.png', href: 'https://yoyocrm.io/' },
 ];
 
 function displayHost(href: string) {
@@ -67,29 +37,21 @@ function LiveFrame({
   href,
   image,
   alt,
-  tall,
   priority,
 }: {
   href: string;
   image: string;
   alt: string;
-  tall?: boolean;
   priority?: boolean;
 }) {
   const isDesktop = useIsDesktop();
   const [active, setActive] = useState(false);
   const [loaded, setLoaded] = useState(false);
-
-  // On desktop, allow interaction after hover / click; on mobile keep scroll-friendly
   const interactive = isDesktop && active;
 
   return (
     <div
-      className={`relative w-full overflow-hidden bg-[#0A0A0A] ${
-        tall
-          ? 'aspect-[16/11] min-h-[220px] sm:min-h-[280px] md:aspect-[21/11] md:min-h-[400px]'
-          : 'aspect-[16/11] min-h-[200px] sm:min-h-[240px] md:aspect-[16/10]'
-      }`}
+      className="relative w-full aspect-[16/11] min-h-[260px] sm:min-h-[300px] md:min-h-[340px] lg:min-h-[380px] overflow-hidden bg-[#0A0A0A]"
       onMouseEnter={() => isDesktop && setActive(true)}
       onMouseLeave={() => isDesktop && setActive(false)}
     >
@@ -99,7 +61,7 @@ function LiveFrame({
         fill
         quality={90}
         priority={priority}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 100vw"
+        sizes="(max-width: 768px) 100vw, 50vw"
         className={`object-cover object-top transition-opacity duration-500 ${loaded ? 'opacity-20' : 'opacity-70'}`}
       />
 
@@ -116,7 +78,6 @@ function LiveFrame({
         referrerPolicy="no-referrer-when-downgrade"
       />
 
-      {/* Mobile / idle: tap overlay — keeps page scroll smooth */}
       {!interactive && (
         <div className="absolute inset-0 z-10 flex items-end justify-center bg-gradient-to-t from-[#080808]/70 via-transparent to-transparent p-4 md:items-center md:bg-transparent md:p-0">
           <button
@@ -167,8 +128,8 @@ export default function Portfolio() {
       />
       <div className="pointer-events-none absolute top-1/4 -left-32 w-[420px] h-[420px] rounded-full bg-[#C8FF00]/[0.04] blur-[120px]" aria-hidden />
 
-      <div className="container-px mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-14 md:mb-24 gap-6 md:gap-8">
+      <div className="container-px mx-auto max-w-[1400px] relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-14 md:mb-20 gap-6 md:gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -191,7 +152,8 @@ export default function Portfolio() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 items-stretch">
+        {/* Uniform large cards — 1 col mobile, 2 col desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
           {projects.map((project, idx) => {
             const host = displayHost(project.href);
 
@@ -202,7 +164,7 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, ease: 'easeOut', delay: Math.min(idx * 0.05, 0.25) }}
                 viewport={{ once: true }}
-                className={`${project.size} group relative flex flex-col overflow-hidden rounded-[1.5rem] md:rounded-[1.75rem] border border-[#1F1F1F] bg-[#0C0C0C] transition-all duration-500 hover:border-[#2E2E2E] hover:shadow-[0_0_0_1px_rgba(200,255,0,0.12),0_24px_48px_rgba(0,0,0,0.45)]`}
+                className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] md:rounded-[1.75rem] border border-[#1F1F1F] bg-[#0C0C0C] transition-all duration-500 hover:border-[#2E2E2E] hover:shadow-[0_0_0_1px_rgba(200,255,0,0.12),0_24px_48px_rgba(0,0,0,0.45)]"
               >
                 <div className="pointer-events-none absolute -top-20 left-1/2 h-40 w-64 -translate-x-1/2 rounded-full bg-[#C8FF00]/[0.07] blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" aria-hidden />
 
@@ -210,17 +172,17 @@ export default function Portfolio() {
                   <div className="relative overflow-hidden rounded-xl border border-[#252525] bg-[#111111] shadow-[0_12px_40px_rgba(0,0,0,0.5)] ring-1 ring-white/[0.04]">
                     <div className="flex items-center gap-2 sm:gap-3 border-b border-[#1F1F1F] bg-[#141414] px-2.5 sm:px-3 py-2 sm:py-2.5">
                       <div className="flex items-center gap-1.5 shrink-0">
-                        <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-[#FF5F57]" />
-                        <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-[#FEBC2E]" />
-                        <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-[#28C840]" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
                       </div>
-                      <div className="flex min-w-0 flex-1 items-center gap-2 rounded-md border border-[#1F1F1F] bg-[#0A0A0A] px-2 sm:px-3 py-1 sm:py-1.5">
+                      <div className="flex min-w-0 flex-1 items-center gap-2 rounded-md border border-[#1F1F1F] bg-[#0A0A0A] px-2 sm:px-3 py-1.5">
                         <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#C8FF00] animate-pulse shadow-[0_0_6px_rgba(200,255,0,0.7)]" />
-                        <span className="truncate text-[10px] sm:text-[11px] font-medium tracking-tight text-[#888888]">
+                        <span className="truncate text-[11px] font-medium tracking-tight text-[#888888]">
                           {host}
                         </span>
                       </div>
-                      <span className="hidden xs:inline-flex shrink-0 rounded-full border border-[#C8FF00]/35 bg-[#C8FF00]/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-[#C8FF00] sm:inline-flex">
+                      <span className="shrink-0 rounded-full border border-[#C8FF00]/35 bg-[#C8FF00]/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.12em] text-[#C8FF00]">
                         Live
                       </span>
                       <a
@@ -238,13 +200,12 @@ export default function Portfolio() {
                       href={project.href}
                       image={project.image}
                       alt={project.alt}
-                      tall={project.tall}
                       priority={idx < 2}
                     />
                   </div>
                 </div>
 
-                <div className="relative z-10 flex flex-1 flex-col justify-between gap-4 p-5 sm:p-6 md:p-8 pt-5 md:pt-6">
+                <div className="relative z-10 flex min-h-[160px] flex-1 flex-col justify-between gap-4 p-5 sm:p-6 md:p-7 pt-5">
                   <div className="flex items-start justify-between gap-3">
                     <span className="inline-block rounded-full border border-[#252525] bg-[#111111] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[#A0A0A0]">
                       {project.category}
@@ -260,10 +221,10 @@ export default function Portfolio() {
                     </a>
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl sm:text-2xl font-bold tracking-[-0.03em] text-[#F5F5F5] md:text-[1.75rem]">
+                    <h3 className="text-2xl font-bold tracking-[-0.03em] text-[#F5F5F5]">
                       {project.title}
                     </h3>
-                    <p className="text-[14px] sm:text-[15px] leading-relaxed text-[#9A9A9A]">
+                    <p className="text-[15px] leading-relaxed text-[#9A9A9A] line-clamp-3">
                       {project.description}
                     </p>
                     <a
