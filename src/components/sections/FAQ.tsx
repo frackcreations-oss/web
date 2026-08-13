@@ -2,8 +2,10 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Plus, Minus, Mail } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import { useDictionary } from '@/context/LocaleContext';
+import { getWhatsAppUrl } from '@/lib/whatsapp';
+import { WhatsAppIcon } from '@/components/ui/WhatsAppButton';
 
 const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -41,6 +43,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
 
 export default function FAQ() {
     const dict = useDictionary();
+    const whatsappUrl = getWhatsAppUrl(dict.whatsapp.message);
 
     return (
         <section className="section-padding bg-[#080808] border-t border-[#1F1F1F]">
@@ -66,11 +69,13 @@ export default function FAQ() {
                 >
                     <p className="text-xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-8">{dict.faq.emailPrompt}</p>
                     <a
-                        href="mailto:frackcreations@gmail.com?subject=Question%20from%20Frack%20website"
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="btn-primary h-14 px-10 text-[15px] mx-auto group inline-flex w-fit items-center justify-center"
                     >
                         {dict.faq.emailUs}
-                        <Mail className="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
+                        <WhatsAppIcon className="ml-2 h-4 w-4" />
                     </a>
                 </motion.div>
             </div>

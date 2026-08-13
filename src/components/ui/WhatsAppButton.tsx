@@ -1,10 +1,9 @@
 "use client";
 
 import { useDictionary } from "@/context/LocaleContext";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "918106471131";
-
-function WhatsAppIcon({ className }: { className?: string }) {
+export function WhatsAppIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -19,7 +18,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export default function WhatsAppButton() {
   const dict = useDictionary();
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(dict.whatsapp.message)}`;
+  const whatsappUrl = getWhatsAppUrl(dict.whatsapp.message);
 
   return (
     <a

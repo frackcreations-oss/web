@@ -8,14 +8,14 @@
     "work": "Nuestro trabajo",
     "services": "Servicios",
     "testimonials": "Testimonios",
-    "bookCall": "Reservar llamada"
+    "bookCall": "WhatsApp"
   },
   "hero": {
     "badge": "Disponibles para nuevos proyectos",
     "titleLine1": "Diseño que se lanza.",
     "titleLine2": "Software que escala.",
     "subtitle": "Equipo de diseño y desarrollo rápido que cuida los detalles que marcan la diferencia. Unificado, premium y ágil. Basado en investigación.",
-    "bookIntro": "Reservar llamada intro",
+    "bookIntro": "Hablar por WhatsApp",
     "ourWork": "Nuestro trabajo",
     "statStartups": "Startups ayudadas",
     "statRaised": "Capital de clientes",
@@ -96,17 +96,17 @@
     ]
   },
   "booking": {
-    "title": "Reserva una llamada intro",
-    "subtitle": "Elige un horario. Recibirás invitación de calendario y una nota breve para aprovechar 30 minutos.",
-    "schedule": "Agendar llamada"
+    "title": "Habla por WhatsApp",
+    "subtitle": "Escríbenos cuando quieras. Respondemos rápido y te ayudamos a empezar — sin calendario.",
+    "schedule": "Abrir WhatsApp"
   },
   "faq": {
     "title": "Preguntas frecuentes",
     "subtitle": "¿Tienes dudas? Perfecto. Aclaremos todo.",
     "emailPrompt": "¿No encuentras tu respuesta?",
-    "emailUs": "Escríbenos",
+    "emailUs": "Chatear en WhatsApp",
     "items": [
-      { "question": "¿Cuánto tarda un proyecto?", "answer": "Depende. Landing 10 días. Con desarrollo, 14. Branding completo 14. Proyectos grandes varían — reserva una llamada para un timeline claro." },
+      { "question": "¿Cuánto tarda un proyecto?", "answer": "Depende. Landing 10 días. Con desarrollo, 14. Branding completo 14. Proyectos grandes varían — escríbenos por WhatsApp para un timeline claro." },
       { "question": "¿Solo diseño o también desarrollo?", "answer": "Ambos. Diseñamos y desarrollamos en Next.js y React. Para MVP, contáctanos." },
       { "question": "¿Cómo funciona la entrega?", "answer": "Revisamos el brief. Borrador inicial en 48 horas. Trabajamos contigo hasta 100% de satisfacción." },
       { "question": "¿Hay límite de solicitudes?", "answer": "¡Sin límite! Pero una solicitud a la vez por calidad. Al aprobar, pasamos a la siguiente." },

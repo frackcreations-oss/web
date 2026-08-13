@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import { useDictionary } from '@/context/LocaleContext';
+import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 type ProjectMeta = {
   image: string;
@@ -158,6 +159,7 @@ function LiveFrame({
 
 export default function Portfolio() {
   const dict = useDictionary();
+  const whatsappUrl = getWhatsAppUrl(dict.whatsapp.message);
   const projects = dict.portfolio.projects
     .map((p, i) => {
       const meta = projectMeta[i];
@@ -304,7 +306,12 @@ export default function Portfolio() {
         </div>
 
         <div className="mt-16 md:mt-24 text-center">
-          <a href="#booking" className="btn-ghost h-14 px-10 text-[15px]">
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-ghost h-14 px-10 text-[15px]"
+          >
             {dict.portfolio.startProject}
           </a>
         </div>

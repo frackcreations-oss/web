@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Check, ArrowRight, MessageSquare, PhoneCall } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Check } from 'lucide-react';
+import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 const plans = [
     {
@@ -96,16 +96,12 @@ export default function Pricing() {
 
                             <div className="space-y-4">
                                 <a
-                                    href="https://calendly.com/frack"
-                                    className={`btn-primary w-full h-14 text-[15px]`}
+                                    href={getWhatsAppUrl("Hi Frack Creations, I'd like to discuss a project.")}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn-primary w-full h-14 text-[15px] inline-flex items-center justify-center"
                                 >
-                                    Book a Call
-                                </a>
-                                <a
-                                    href="https://t.me/frack"
-                                    className="btn-secondary w-full h-14 text-[15px]"
-                                >
-                                    Connect on Telegram
+                                    Chat on WhatsApp
                                 </a>
                             </div>
                         </motion.div>

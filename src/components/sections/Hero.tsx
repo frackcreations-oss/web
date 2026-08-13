@@ -3,11 +3,13 @@
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { useDictionary } from '@/context/LocaleContext';
+import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 const HeroCanvas = dynamic(() => import('@/components/ui/HeroCanvas'), { ssr: false });
 
 export default function Hero() {
     const dict = useDictionary();
+    const whatsappUrl = getWhatsAppUrl(dict.whatsapp.message);
 
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden bg-[#080808]">
@@ -61,7 +63,12 @@ export default function Hero() {
                     transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                     className="flex flex-col sm:flex-row items-center gap-4 mb-32"
                 >
-                    <a href="#booking" className="btn-primary h-14 px-8 text-[15px]">
+                    <a
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-primary h-14 px-8 text-[15px]"
+                    >
                         {dict.hero.bookIntro}
                     </a>
                     <a href="#portfolio" className="btn-ghost h-14 px-8 text-[15px]">

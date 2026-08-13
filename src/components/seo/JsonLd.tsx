@@ -15,6 +15,7 @@ const orgJsonLd = {
     { "@type": "Country", name: "United Arab Emirates" },
     { "@type": "Place", name: "Middle East" },
   ],
+  telephone: "+918106471131",
   sameAs: [
     "https://www.instagram.com/frackcreations/",
     "https://www.linkedin.com/company/frack-creations",
@@ -40,8 +41,8 @@ const websiteJsonLd = {
   publisher: { "@id": `${SITE_URL}/#organization` },
   potentialAction: {
     "@type": "ContactAction",
-    target: `${SITE_URL}/#booking`,
-    name: "Book intro call",
+    target: "https://wa.me/918106471131",
+    name: "Chat on WhatsApp",
   },
 };
 
