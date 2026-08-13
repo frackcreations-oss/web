@@ -96,9 +96,21 @@
     ]
   },
   "booking": {
-    "title": "Habla por WhatsApp",
-    "subtitle": "Escríbenos cuando quieras. Respondemos rápido y te ayudamos a empezar — sin calendario.",
-    "schedule": "Abrir WhatsApp"
+    "title": "Empieza un proyecto",
+    "subtitle": "Cuéntanos qué necesitas. Respondemos rápido — o escríbenos por WhatsApp.",
+    "schedule": "O chatear por WhatsApp",
+    "form": {
+      "name": "Nombre completo",
+      "namePlaceholder": "Tu nombre",
+      "email": "Email",
+      "emailPlaceholder": "tu@empresa.com",
+      "phone": "Teléfono / WhatsApp",
+      "phonePlaceholder": "+1 …",
+      "message": "¿Qué necesitas?",
+      "messagePlaceholder": "Web, e‑commerce, chatbot, SaaS…",
+      "submit": "Enviar datos",
+      "success": "Gracias — recibimos tus datos y te contactaremos pronto."
+    }
   },
   "faq": {
     "title": "Preguntas frecuentes",

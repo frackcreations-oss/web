@@ -96,9 +96,21 @@
     ]
   },
   "booking": {
-    "title": "Chat on WhatsApp",
-    "subtitle": "Message us anytime. We’ll reply quickly and help you start your project — no calendar needed.",
-    "schedule": "Open WhatsApp"
+    "title": "Start a project",
+    "subtitle": "Tell us a bit about what you need. We’ll get back quickly — or message us on WhatsApp.",
+    "schedule": "Or chat on WhatsApp",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "phone": "Phone / WhatsApp",
+      "phonePlaceholder": "+966 …",
+      "message": "What do you need?",
+      "messagePlaceholder": "Website, e‑commerce, chatbot, SaaS…",
+      "submit": "Send details",
+      "success": "Thanks — we received your details and will be in touch soon."
+    }
   },
   "faq": {
     "title": "Frequently Asked Questions",

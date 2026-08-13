@@ -203,6 +203,21 @@
   color: #fff;
 }
 
+/* YOYO capture success/error on dark UI */
+#booking [role="status"] {
+  margin-top: 0 !important;
+  padding: 18px 20px !important;
+  border-radius: 16px !important;
+  background: rgba(200, 255, 0, 0.1) !important;
+  color: #c8ff00 !important;
+  border: 1px solid rgba(200, 255, 0, 0.28);
+  font: 600 15px/1.5 inherit !important;
+}
+
+#booking [data-yoyo-error] {
+  color: #f87171 !important;
+}
+
 .font-heading {
   font-family: var(--font-heading);
 }
