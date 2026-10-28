@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Frack — Web & e‑commerce development | Design, AI & chatbots",
+    "title": "Frack | Web & e‑commerce development | Design, AI & chatbots",
     "description": "Frack designs and builds web apps, SaaS, e‑commerce, WhatsApp AI bots, and Meta chatbots. Serving startups worldwide, including Saudi Arabia & the Gulf."
   },
   "nav": {
@@ -64,7 +64,7 @@
     "traffic": "TRAFFIC",
     "conv": "CONV.",
     "items": [
-      { "title": "Built to Perform", "description": "Research-backed design that doesn't just look good — it does its job." },
+      { "title": "Built to Perform", "description": "Research-backed design that doesn't just look good, it does its job." },
       { "title": "Premium Quality", "description": "Obsessive attention to detail from senior designers. Your startup looks like it means business." },
       { "title": "Fast Delivery", "description": "Most projects ship in 10-14 days. One team, no handoff gaps." }
     ]
@@ -72,14 +72,14 @@
   "portfolio": {
     "titleMain": "Selected",
     "titleMuted": "Works.",
-    "subtitle": "Live previews of products we shipped — interact on desktop, open full-screen on mobile.",
+    "subtitle": "Live previews of products we shipped, interact on desktop, open full-screen on mobile.",
     "startProject": "Start a project",
     "projects": [
       { "title": "Wasil", "category": "Product", "description": "Full product website and experience built end-to-end for a modern digital brand." },
-      { "title": "Mohammed Bilal AI", "category": "3D Portfolio", "description": "Immersive 3D developer portfolio — live interactive preview. Projects, skills, and contact for AI & full-stack work." },
-      { "title": "Nómada Miami", "category": "3D Landing", "description": "Live bilingual 3D marketing landing for Miami — strategy, ads, web, and lead capture in Spanish & English." },
-      { "title": "Maktab Elite", "category": "E‑commerce", "description": "Arabic office furniture store for Saudi Arabia — catalogs, city pages, and WhatsApp-first sales." },
-      { "title": "Care At Heart", "category": "Healthcare Web", "description": "Home health services website for El Paso — services, insurance, appointments, and bilingual support chatbot." },
+      { "title": "Mohammed Bilal AI", "category": "3D Portfolio", "description": "Immersive 3D developer portfolio, live interactive preview. Projects, skills, and contact for AI & full-stack work." },
+      { "title": "Nómada Miami", "category": "3D Landing", "description": "Live bilingual 3D marketing landing for Miami, strategy, ads, web, and lead capture in Spanish & English." },
+      { "title": "Maktab Elite", "category": "E‑commerce", "description": "Arabic office furniture store for Saudi Arabia, catalogs, city pages, and WhatsApp-first sales." },
+      { "title": "Care At Heart", "category": "Healthcare Web", "description": "Home health services website for El Paso, services, insurance, appointments, and bilingual support chatbot." },
       { "title": "YOYO CRM", "category": "AI SaaS", "description": "AI-powered CRM with WhatsApp inbox, pipeline, smart routing, and suggested replies for sales teams." }
     ]
   },
@@ -97,7 +97,7 @@
   },
   "booking": {
     "title": "Start a project",
-    "subtitle": "Tell us a bit about what you need. We’ll get back quickly — or message us on WhatsApp.",
+    "subtitle": "Tell us a bit about what you need. We’ll get back quickly, or message us on WhatsApp.",
     "schedule": "Or chat on WhatsApp",
     "form": {
       "name": "Full name",
@@ -109,7 +109,7 @@
       "message": "What do you need?",
       "messagePlaceholder": "Website, e‑commerce, chatbot, SaaS…",
       "submit": "Send details",
-      "success": "Thanks — we received your details and will be in touch soon."
+      "success": "Thanks, we received your details and will be in touch soon."
     }
   },
   "faq": {
@@ -118,7 +118,7 @@
     "emailPrompt": "Can't find your answer?",
     "emailUs": "Chat on WhatsApp",
     "items": [
-      { "question": "How long does a project take?", "answer": "It depends on the project. Landing page design takes 10 days. With development, 14 days. Full branding is 14 days. For larger Apps, Websites or complex projects, timing varies — message us on WhatsApp and we'll give you a clear timeline." },
+      { "question": "How long does a project take?", "answer": "It depends on the project. Landing page design takes 10 days. With development, 14 days. Full branding is 14 days. For larger Apps, Websites or complex projects, timing varies, message us on WhatsApp and we'll give you a clear timeline." },
       { "question": "Do you handle development or just design?", "answer": "Both. We design and develop in Next.js and React. We use Rive for animations. If you need an MVP built, contact us and we'll discuss scope." },
       { "question": "How does the delivery process work?", "answer": "Once you submit a request, our team reviews the brief. You'll receive an initial draft within 48 hours. We work closely with you, incorporating feedback until you're 100% satisfied." },
       { "question": "Is there a limit to design requests?", "answer": "No limit! However, we work on one request at a time to ensure maximum quality and focus. Once a design is approved, we immediately jump to the next one in your queue." },
@@ -141,8 +141,8 @@
     "terms": "Terms of Service",
     "accepting": "Accepting new clients",
     "rights": "All rights reserved.",
-    "seoTitle": "Frack — Web development, AI bots & e‑commerce worldwide",
-    "seoBody": "We design and build professional websites, e‑commerce stores, web apps, WhatsApp AI bots, Meta chatbots, and AI SaaS — from idea to launch with clear UX and strong performance."
+    "seoTitle": "Frack | Web development, AI bots & e‑commerce worldwide",
+    "seoBody": "We design and build professional websites, e‑commerce stores, web apps, WhatsApp AI bots, Meta chatbots, and AI SaaS, from idea to launch with clear UX and strong performance."
   },
   "whatsapp": {
     "label": "Chat on WhatsApp",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Frack — Desarrollo web y e‑commerce | Diseño, IA y chatbots",
+    "title": "Frack | Desarrollo web y e‑commerce | Diseño, IA y chatbots",
     "description": "Frack diseña y desarrolla apps web, SaaS, e‑commerce, chatbots de WhatsApp con IA y chatbots de Meta. Para startups en todo el mundo, incluido Arabia Saudita y el Golfo."
   },
   "nav": {
@@ -64,40 +64,40 @@
     "traffic": "TRÁFICO",
     "conv": "CONV.",
     "items": [
-      { "title": "Hecho para rendir", "description": "Diseño basado en investigación — no solo se ve bien, cumple su función." },
+      { "title": "Hecho para rendir", "description": "Diseño basado en investigación, no solo se ve bien, cumple su función." },
       { "title": "Calidad premium", "description": "Detalle obsesivo de diseñadores senior. Tu startup transmite seriedad." },
-      { "title": "Entrega rápida", "description": "La mayoría de proyectos en 10–14 días. Un equipo, sin huecos." }
+      { "title": "Entrega rápida", "description": "La mayoría de proyectos en 10-14 días. Un equipo, sin huecos." }
     ]
   },
   "portfolio": {
     "titleMain": "Trabajos",
     "titleMuted": "seleccionados.",
-    "subtitle": "Previews en vivo de productos que lanzamos — interactúa en escritorio; en móvil abre el sitio completo.",
+    "subtitle": "Previews en vivo de productos que lanzamos, interactúa en escritorio; en móvil abre el sitio completo.",
     "startProject": "Iniciar proyecto",
     "projects": [
       { "title": "Wasil", "category": "Producto", "description": "Web y experiencia de producto de punta a punta para una marca digital moderna." },
-      { "title": "Mohammed Bilal AI", "category": "Portfolio 3D", "description": "Portfolio 3D inmersivo en vivo — proyectos, skills y contacto para IA y full-stack." },
-      { "title": "Nómada Miami", "category": "Landing 3D", "description": "Landing 3D bilingüe en vivo para agencia en Miami — estrategia, ads, web y captación de leads." },
-      { "title": "Maktab Elite", "category": "E‑commerce", "description": "Tienda de mobiliario de oficina en árabe para Arabia Saudita — catálogo y ventas por WhatsApp." },
-      { "title": "Care At Heart", "category": "Web healthcare", "description": "Sitio de home health en El Paso — servicios, seguros, citas y chatbot bilingüe de apoyo." },
+      { "title": "Mohammed Bilal AI", "category": "Portfolio 3D", "description": "Portfolio 3D inmersivo en vivo, proyectos, skills y contacto para IA y full-stack." },
+      { "title": "Nómada Miami", "category": "Landing 3D", "description": "Landing 3D bilingüe en vivo para agencia en Miami, estrategia, ads, web y captación de leads." },
+      { "title": "Maktab Elite", "category": "E‑commerce", "description": "Tienda de mobiliario de oficina en árabe para Arabia Saudita, catálogo y ventas por WhatsApp." },
+      { "title": "Care At Heart", "category": "Web healthcare", "description": "Sitio de home health en El Paso, servicios, seguros, citas y chatbot bilingüe de apoyo." },
       { "title": "YOYO CRM", "category": "SaaS con IA", "description": "CRM con IA, inbox de WhatsApp, pipeline, routing inteligente y respuestas sugeridas." }
     ]
   },
   "testimonials": {
     "badge": "Testimonios seleccionados",
-    "title": "Las palabras son baratas — los resultados, no..."
+    "title": "Las palabras son baratas, los resultados, no..."
   },
   "process": {
     "title": "Qué tan simple puede ser",
     "steps": [
       { "duration": "~ 10 MIN", "title": "1. Onboarding", "description": "Preguntas sobre objetivos, plazos y assets." },
-      { "duration": "~ 10–12 DÍAS", "title": "2. Investigación, diseño y desarrollo", "description": "Estudiamos mercado, audiencia y competencia. Luego diseñamos y desarrollamos." },
-      { "duration": "~ 1–2 DÍAS", "title": "3. Lanzamiento", "description": "Recibes todos los archivos. Gestionamos handoff y lanzamiento." }
+      { "duration": "~ 10-12 DÍAS", "title": "2. Investigación, diseño y desarrollo", "description": "Estudiamos mercado, audiencia y competencia. Luego diseñamos y desarrollamos." },
+      { "duration": "~ 1-2 DÍAS", "title": "3. Lanzamiento", "description": "Recibes todos los archivos. Gestionamos handoff y lanzamiento." }
     ]
   },
   "booking": {
     "title": "Empieza un proyecto",
-    "subtitle": "Cuéntanos qué necesitas. Respondemos rápido — o escríbenos por WhatsApp.",
+    "subtitle": "Cuéntanos qué necesitas. Respondemos rápido, o escríbenos por WhatsApp.",
     "schedule": "O chatear por WhatsApp",
     "form": {
       "name": "Nombre completo",
@@ -109,7 +109,7 @@
       "message": "¿Qué necesitas?",
       "messagePlaceholder": "Web, e‑commerce, chatbot, SaaS…",
       "submit": "Enviar datos",
-      "success": "Gracias — recibimos tus datos y te contactaremos pronto."
+      "success": "Gracias, recibimos tus datos y te contactaremos pronto."
     }
   },
   "faq": {
@@ -118,7 +118,7 @@
     "emailPrompt": "¿No encuentras tu respuesta?",
     "emailUs": "Chatear en WhatsApp",
     "items": [
-      { "question": "¿Cuánto tarda un proyecto?", "answer": "Depende. Landing 10 días. Con desarrollo, 14. Branding completo 14. Proyectos grandes varían — escríbenos por WhatsApp para un timeline claro." },
+      { "question": "¿Cuánto tarda un proyecto?", "answer": "Depende. Landing 10 días. Con desarrollo, 14. Branding completo 14. Proyectos grandes varían, escríbenos por WhatsApp para un timeline claro." },
       { "question": "¿Solo diseño o también desarrollo?", "answer": "Ambos. Diseñamos y desarrollamos en Next.js y React. Para MVP, contáctanos." },
       { "question": "¿Cómo funciona la entrega?", "answer": "Revisamos el brief. Borrador inicial en 48 horas. Trabajamos contigo hasta 100% de satisfacción." },
       { "question": "¿Hay límite de solicitudes?", "answer": "¡Sin límite! Pero una solicitud a la vez por calidad. Al aprobar, pasamos a la siguiente." },
@@ -141,8 +141,8 @@
     "terms": "Términos",
     "accepting": "Aceptando nuevos clientes",
     "rights": "Todos los derechos reservados.",
-    "seoTitle": "Frack — Desarrollo web, bots IA y e‑commerce",
-    "seoBody": "Diseñamos y desarrollamos webs, tiendas online, apps, bots WhatsApp con IA, chatbots Meta y SaaS con IA — de la idea al lanzamiento."
+    "seoTitle": "Frack | Desarrollo web, bots IA y e‑commerce",
+    "seoBody": "Diseñamos y desarrollamos webs, tiendas online, apps, bots WhatsApp con IA, chatbots Meta y SaaS con IA, de la idea al lanzamiento."
   },
   "whatsapp": {
     "label": "Chatear en WhatsApp",

@@ -28,7 +28,7 @@ export default function QuoteSection() {
 
                     <div className="pt-8">
                         <p className="text-xl md:text-2xl font-medium tracking-widest uppercase opacity-80">
-                            — Marty Neumeier
+                            Marty Neumeier
                         </p>
                         <motion.a
                             href="#pricing"

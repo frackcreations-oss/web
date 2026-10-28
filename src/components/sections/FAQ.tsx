@@ -4,8 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 import { useDictionary } from '@/context/LocaleContext';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
-import { WhatsAppIcon } from '@/components/ui/WhatsAppButton';
 
 const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +41,6 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
 
 export default function FAQ() {
     const dict = useDictionary();
-    const whatsappUrl = getWhatsAppUrl(dict.whatsapp.message);
 
     return (
         <section className="section-padding bg-[#080808] border-t border-[#1F1F1F]">
@@ -55,29 +52,11 @@ export default function FAQ() {
                     </p>
                 </div>
 
-                <div className="max-w-4xl mx-auto mb-20">
+                <div className="max-w-4xl mx-auto">
                     {dict.faq.items.map((faq, idx) => (
                         <FAQItem key={idx} question={faq.question} answer={faq.answer} />
                     ))}
                 </div>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center p-12 card-premium rounded-[2rem] max-w-2xl mx-auto"
-                >
-                    <p className="text-xl font-bold text-[#F5F5F5] tracking-[-0.02em] mb-8">{dict.faq.emailPrompt}</p>
-                    <a
-                        href={whatsappUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-primary h-14 px-10 text-[15px] mx-auto group inline-flex w-fit items-center justify-center"
-                    >
-                        {dict.faq.emailUs}
-                        <WhatsAppIcon className="ml-2 h-4 w-4" />
-                    </a>
-                </motion.div>
             </div>
         </section>
     );

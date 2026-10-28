@@ -45,12 +45,12 @@ export const viewport: Viewport = {
 };
 
 const titleDefault =
-  "Frack — Web & e‑commerce development | تطوير مواقع ومتاجر إلكترونية";
+  "Frack | Web & e‑commerce development | تطوير مواقع ومتاجر إلكترونية";
 
 const descriptionDefault =
   "Frack designs and builds web apps, SaaS, and e‑commerce stores. " +
   "Serving startups and teams worldwide, including Saudi Arabia & the Gulf. " +
-  "فراك: تصميم وتطوير مواقع إلكترونية، متاجر إلكترونية، وتطبيقات ويب احترافية في السعودية والخليج — " +
+  "فراك: تصميم وتطوير مواقع إلكترونية، متاجر إلكترونية، وتطبيقات ويب احترافية في السعودية والخليج، " +
   "تطوير مواقع، برمجة مواقع، تطوير متاجر إلكترونية، تصميم واجهات.";
 
 const keywords = [

@@ -10,10 +10,12 @@ import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
 import Booking from "@/components/sections/Booking";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import IntroLoader from "@/components/ui/IntroLoader";
 
 export default function HomeContent() {
   return (
     <main className="min-h-screen bg-background">
+      <IntroLoader />
       <Navbar />
       <Hero />
       <Services />

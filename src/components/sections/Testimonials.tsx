@@ -71,36 +71,40 @@ export default function Testimonials() {
                     </h2>
                 </motion.div>
 
-                {/* CSS Columns (Masonry effect) */}
-                <div className="relative max-h-[600px] md:max-h-[800px] overflow-hidden pb-10">
-                    <div className="columns-1 md:columns-2 lg:columns-3 gap-6">
-                        {testimonials.map((item, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
-                                viewport={{ once: true }}
-                                className="break-inside-avoid bg-transparent border border-[#1F1F1F] rounded-2xl p-8 flex flex-col gap-6 hover:bg-[#0C0C0C] transition-colors duration-300 w-full mb-6 inline-block"
-                            >
-                                {/* Author Row */}
-                                <div className="flex items-center gap-4">
-                                    <img src={item.image} alt={item.name} className="w-8 h-8 rounded-full grayscale opacity-80" />
-                                    <span className="text-[#888888] text-[12px] font-bold tracking-[0.05em] uppercase">
-                                        {item.name}
-                                    </span>
+                {/* 3D tilted marquee: rows drift in opposite directions on a tilted plane */}
+                <div className="testi-stage relative -mx-6 md:mx-0 h-[520px] md:h-[640px] overflow-hidden">
+                    <div className="testi-plane absolute left-1/2 top-1/2 flex w-[180%] md:w-[150%] flex-col gap-5 md:gap-6">
+                        {[0, 1, 2].map((row) => {
+                            const items = testimonials.filter((_, i) => i % 3 === row);
+                            const loop = [...items, ...items, ...items, ...items];
+                            return (
+                                <div key={row} className={`testi-row flex w-max gap-5 md:gap-6 ${row % 2 ? 'testi-rev' : ''}`} style={{ animationDuration: `${46 + row * 8}s` }}>
+                                    {loop.map((item, idx) => (
+                                        <figure
+                                            key={idx}
+                                            className="group w-[280px] md:w-[380px] shrink-0 rounded-2xl border border-[#1F1F1F] bg-[#0C0C0C]/90 p-6 md:p-7 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#C8FF00]/40 hover:shadow-[0_20px_60px_-20px_rgba(200,255,0,0.25)]"
+                                        >
+                                            <div className="mb-4 flex items-center gap-3">
+                                                <img src={item.image} alt={item.name} className="h-8 w-8 rounded-full grayscale opacity-80 transition group-hover:grayscale-0 group-hover:opacity-100" />
+                                                <figcaption className="text-[#888888] text-[11px] md:text-[12px] font-bold tracking-[0.05em] uppercase">
+                                                    {item.name}
+                                                </figcaption>
+                                            </div>
+                                            <blockquote className="text-[#F5F5F5] text-[14px] md:text-[15.5px] leading-[1.6] font-medium">
+                                                {item.quote}
+                                            </blockquote>
+                                        </figure>
+                                    ))}
                                 </div>
-
-                                {/* Quote */}
-                                <p className="text-[#F5F5F5] text-[15.5px] leading-[1.65] font-medium">
-                                    {item.quote}
-                                </p>
-                            </motion.div>
-                        ))}
+                            );
+                        })}
                     </div>
 
-                    {/* Endless Fade Out Effect */}
-                    <div className="absolute bottom-0 left-0 w-full h-48 md:h-64 bg-gradient-to-t from-[#080808] to-transparent pointer-events-none" />
+                    {/* Edge fades */}
+                    <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#080808] to-transparent" />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#080808] to-transparent" />
+                    <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-40 bg-gradient-to-r from-[#080808] to-transparent" />
+                    <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-[#080808] to-transparent" />
                 </div>
             </div>
         </section>

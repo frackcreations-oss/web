@@ -15,7 +15,7 @@ export function ensureYoyoFormBound(form: HTMLFormElement) {
     (form.getAttribute("data-yoyo-action") || "").trim() || YOYO_CAPTURE_ACTION;
   const successMsg =
     form.getAttribute("data-yoyo-success") ||
-    "Thanks — we received your details and will be in touch soon.";
+    "Thanks, we received your details and will be in touch soon.";
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();

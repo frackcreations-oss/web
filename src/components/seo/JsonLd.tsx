@@ -7,7 +7,7 @@ const orgJsonLd = {
   name: "Frack",
   url: SITE_URL,
   description:
-    "Design and development studio for web apps, SaaS, and e‑commerce. English & Arabic-speaking clients — including Saudi Arabia.",
+    "Design and development studio for web apps, SaaS, and e‑commerce. English & Arabic-speaking clients, including Saudi Arabia.",
   slogan: "Design that ships. Software that scales.",
   knowsLanguage: ["English", "Arabic", "Spanish"],
   areaServed: [
