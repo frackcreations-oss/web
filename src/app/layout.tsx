@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Phudu, Syne, Plus_Jakarta_Sans, Noto_Sans_Arabic } from "next/font/google";
+import { Inter, Phudu, Syne, Outfit, Plus_Jakarta_Sans, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/seo/JsonLd";
 import YoyoCaptureScript from "@/components/YoyoCaptureScript";
@@ -20,6 +20,12 @@ const phudu = Phudu({
 
 const syne = Syne({
   variable: "--font-syne",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
 });
@@ -116,7 +122,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body
-        className={`${plusJakartaSans.variable} ${syne.variable} ${interFixed.variable} ${phudu.variable} ${notoSansArabic.variable} font-sans antialiased bg-background text-foreground min-h-screen selection:bg-accent selection:text-white`}
+        className={`${plusJakartaSans.variable} ${syne.variable} ${outfit.variable} ${interFixed.variable} ${phudu.variable} ${notoSansArabic.variable} font-sans antialiased bg-background text-foreground min-h-screen selection:bg-accent selection:text-white`}
       >
         <JsonLd />
         <YoyoCaptureScript />
