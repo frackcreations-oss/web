@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const dict = await getDictionary(locale);
   const ogLocale =
-    locale === "ar" ? "ar_SA" : locale === "es" ? "es_ES" : "en_US";
+    locale === "ar" ? "ar_AR" : locale === "es" ? "es_ES" : "en_US";
 
   return {
     title: dict.meta.title,
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `/${locale}`,
       languages: {
         en: `${SITE_URL}/en`,
-        "ar-SA": `${SITE_URL}/ar`,
+        ar: `${SITE_URL}/ar`,
         es: `${SITE_URL}/es`,
         "x-default": `${SITE_URL}/en`,
       },
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: dict.meta.title,
       description: dict.meta.description,
       locale: ogLocale,
-      alternateLocale: ["en_US", "ar_SA", "es_ES"].filter(
+      alternateLocale: ["en_US", "ar_AR", "es_ES"].filter(
         (l) => l !== ogLocale
       ),
       url: `${SITE_URL}/${locale}`,

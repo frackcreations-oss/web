@@ -26,7 +26,7 @@ export default function LanguageSwitcher({ compact }: { compact?: boolean }) {
           <Link
             key={code}
             href={href}
-            hrefLang={code === "ar" ? "ar-SA" : code === "es" ? "es" : "en"}
+            hrefLang={code === "ar" ? "ar" : code === "es" ? "es" : "en"}
             className={`min-w-[2.25rem] rounded-full px-2.5 py-1.5 text-center text-[11px] font-bold tracking-wide transition-colors ${
               active
                 ? "bg-[#C8FF00] text-[#080808]"

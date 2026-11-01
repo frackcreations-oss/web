@@ -7,13 +7,11 @@ const orgJsonLd = {
   name: "Frack",
   url: SITE_URL,
   description:
-    "Design and development studio for web apps, SaaS, and e‑commerce. English & Arabic-speaking clients, including Saudi Arabia.",
+    "Design and development studio for web apps, SaaS, and e‑commerce. Serving clients worldwide in English, Arabic, and Spanish.",
   slogan: "Design that ships. Software that scales.",
   knowsLanguage: ["English", "Arabic", "Spanish"],
   areaServed: [
-    { "@type": "Country", name: "Saudi Arabia" },
-    { "@type": "Country", name: "United Arab Emirates" },
-    { "@type": "Place", name: "Middle East" },
+    { "@type": "Place", name: "Worldwide" },
   ],
   telephone: "+918106471131",
   sameAs: [
@@ -37,7 +35,7 @@ const websiteJsonLd = {
   "@id": `${SITE_URL}/#website`,
   url: SITE_URL,
   name: "Frack",
-  inLanguage: ["en", "ar-SA", "es"],
+  inLanguage: ["en", "ar", "es"],
   publisher: { "@id": `${SITE_URL}/#organization` },
   potentialAction: {
     "@type": "ContactAction",

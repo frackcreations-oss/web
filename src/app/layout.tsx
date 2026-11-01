@@ -55,8 +55,8 @@ const titleDefault =
 
 const descriptionDefault =
   "Frack designs and builds web apps, SaaS, and e‑commerce stores. " +
-  "Serving startups and teams worldwide, including Saudi Arabia & the Gulf. " +
-  "فراك: تصميم وتطوير مواقع إلكترونية، متاجر إلكترونية، وتطبيقات ويب احترافية في السعودية والخليج، " +
+  "Serving startups and teams worldwide. " +
+  "فراك: تصميم وتطوير مواقع إلكترونية، متاجر إلكترونية، وتطبيقات ويب احترافية حول العالم، " +
   "تطوير مواقع، برمجة مواقع، تطوير متاجر إلكترونية، تصميم واجهات.";
 
 const keywords = [
@@ -70,10 +70,8 @@ const keywords = [
   "تطوير متاجر إلكترونية",
   "تصميم مواقع",
   "برمجة مواقع",
-  "شركة تطوير مواقع السعودية",
   "تصميم متجر إلكتروني",
   "إنشاء موقع إلكتروني",
-  "السعودية",
 ];
 
 export const metadata: Metadata = {
@@ -88,7 +86,7 @@ export const metadata: Metadata = {
     canonical: "/en",
     languages: {
       en: `${SITE_URL}/en`,
-      "ar-SA": `${SITE_URL}/ar`,
+      ar: `${SITE_URL}/ar`,
       es: `${SITE_URL}/es`,
       "x-default": `${SITE_URL}/en`,
     },
@@ -98,7 +96,7 @@ export const metadata: Metadata = {
     description: descriptionDefault,
     type: "website",
     locale: "en_US",
-    alternateLocale: ["ar_SA"],
+    alternateLocale: ["ar_AR"],
     url: SITE_URL,
     siteName: "Frack",
   },
