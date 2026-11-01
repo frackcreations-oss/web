@@ -3,8 +3,8 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useDictionary } from '@/context/LocaleContext';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
-import { WhatsAppIcon } from '@/components/ui/WhatsAppButton';
+import { BOOKING_URL } from '@/lib/booking';
+import { CalendarDays } from 'lucide-react';
 import { ensureYoyoFormBound, YOYO_CAPTURE_ACTION, YOYO_CAPTURE_TOKEN } from '@/lib/yoyo';
 
 const fieldClass =
@@ -12,7 +12,6 @@ const fieldClass =
 
 export default function Booking() {
   const dict = useDictionary();
-  const whatsappUrl = getWhatsAppUrl(dict.whatsapp.message);
   const form = dict.booking.form;
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -111,12 +110,12 @@ export default function Booking() {
           </form>
 
           <a
-            href={whatsappUrl}
+            href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-ghost h-14 w-full text-[15px] inline-flex items-center justify-center gap-2"
           >
-            <WhatsAppIcon className="h-5 w-5" />
+            <CalendarDays className="h-5 w-5" />
             {dict.booking.schedule}
           </a>
         </motion.div>

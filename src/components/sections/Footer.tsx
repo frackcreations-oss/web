@@ -3,14 +3,13 @@
 import NextLink from 'next/link';
 import { Instagram, Twitter, Linkedin, ArrowUpRight } from 'lucide-react';
 import { useDictionary, useLocale } from '@/context/LocaleContext';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
-import { WhatsAppIcon } from '@/components/ui/WhatsAppButton';
+import { BOOKING_URL } from '@/lib/booking';
+import { CalendarDays } from 'lucide-react';
 
 export default function Footer() {
     const dict = useDictionary();
     const locale = useLocale();
     const currentYear = new Date().getFullYear();
-    const whatsappUrl = getWhatsAppUrl(dict.whatsapp.message);
 
     const footerLinks = {
         navigation: [
@@ -47,12 +46,12 @@ export default function Footer() {
                         </p>
                         <div className="flex gap-3">
                             <a
-                                href={whatsappUrl}
+                                href={BOOKING_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-[#111111] border border-[#1F1F1F] text-[#F5F5F5] hover:border-[#C8FF00] hover:text-[#C8FF00] transition-all duration-300 font-medium text-sm"
                             >
-                                <WhatsAppIcon className="h-4 w-4" />
+                                <CalendarDays className="h-4 w-4" />
                                 {dict.footer.startProject}
                             </a>
                         </div>

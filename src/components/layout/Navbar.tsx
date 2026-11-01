@@ -6,14 +6,13 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import { useDictionary, useLocale } from "@/context/LocaleContext";
-import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { BOOKING_URL } from "@/lib/booking";
 
 export default function Navbar() {
     const dict = useDictionary();
     const locale = useLocale();
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const whatsappUrl = getWhatsAppUrl(dict.whatsapp.message);
 
     const navLinks = [
         { name: dict.nav.process, href: `/${locale}#process` },
@@ -60,7 +59,7 @@ export default function Navbar() {
                     </div>
                     <motion.div whileTap={{ scale: 0.98 }} className="hidden md:block">
                         <a
-                            href={whatsappUrl}
+                            href={BOOKING_URL}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-primary h-11 px-5 text-sm no-underline inline-flex items-center justify-center whitespace-nowrap"
@@ -99,7 +98,7 @@ export default function Navbar() {
                             </NextLink>
                         ))}
                         <a
-                            href={whatsappUrl}
+                            href={BOOKING_URL}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => setIsOpen(false)}

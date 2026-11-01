@@ -38,9 +38,9 @@ const websiteJsonLd = {
   inLanguage: ["en", "ar", "es"],
   publisher: { "@id": `${SITE_URL}/#organization` },
   potentialAction: {
-    "@type": "ContactAction",
-    target: "https://wa.me/918106471131",
-    name: "Chat on WhatsApp",
+    "@type": "ScheduleAction",
+    target: "https://calendly.com/frackcreations/30min",
+    name: "Book a meeting",
   },
 };
 

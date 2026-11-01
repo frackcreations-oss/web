@@ -9,7 +9,7 @@ import Process from "@/components/sections/Process";
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
 import Booking from "@/components/sections/Booking";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import BookingButton from "@/components/ui/BookingButton";
 import IntroLoader from "@/components/ui/IntroLoader";
 
 export default function HomeContent() {
@@ -29,7 +29,7 @@ export default function HomeContent() {
       <Booking />
       <FAQ />
       <Footer />
-      <WhatsAppButton />
+      <BookingButton />
     </main>
   );
 }

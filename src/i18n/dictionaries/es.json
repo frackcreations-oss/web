@@ -8,7 +8,7 @@
     "work": "Nuestro trabajo",
     "services": "Servicios",
     "testimonials": "Testimonios",
-    "bookCall": "WhatsApp",
+    "bookCall": "Reservar reunión",
     "package": "Paquete"
   },
   "hero": {
@@ -16,7 +16,7 @@
     "titleLine1": "Diseño que se lanza.",
     "titleLine2": "Software que escala.",
     "subtitle": "Equipo de diseño y desarrollo rápido que cuida los detalles que marcan la diferencia. Unificado, premium y ágil. Basado en investigación.",
-    "bookIntro": "Hablar por WhatsApp",
+    "bookIntro": "Reservar reunión",
     "ourWork": "Nuestro trabajo",
     "statStartups": "Startups ayudadas",
     "statRaised": "Capital de clientes",
@@ -98,14 +98,14 @@
   },
   "booking": {
     "title": "Empieza un proyecto",
-    "subtitle": "Cuéntanos qué necesitas. Respondemos rápido, o escríbenos por WhatsApp.",
-    "schedule": "O chatear por WhatsApp",
+    "subtitle": "Cuéntanos qué necesitas. Respondemos rápido, o reserva una reunión con nosotros.",
+    "schedule": "O reservar una reunión",
     "form": {
       "name": "Nombre completo",
       "namePlaceholder": "Tu nombre",
       "email": "Email",
       "emailPlaceholder": "tu@empresa.com",
-      "phone": "Teléfono / WhatsApp",
+      "phone": "Teléfono",
       "phonePlaceholder": "+1 …",
       "message": "¿Qué necesitas?",
       "messagePlaceholder": "Web, e‑commerce, chatbot, SaaS…",
@@ -116,10 +116,8 @@
   "faq": {
     "title": "Preguntas frecuentes",
     "subtitle": "¿Tienes dudas? Perfecto. Aclaremos todo.",
-    "emailPrompt": "¿No encuentras tu respuesta?",
-    "emailUs": "Chatear en WhatsApp",
     "items": [
-      { "question": "¿Cuánto tarda un proyecto?", "answer": "Depende. Landing 10 días. Con desarrollo, 14. Branding completo 14. Proyectos grandes varían, escríbenos por WhatsApp para un timeline claro." },
+      { "question": "¿Cuánto tarda un proyecto?", "answer": "Depende. Landing 10 días. Con desarrollo, 14. Branding completo 14. Proyectos grandes varían, reserva una reunión para un timeline claro." },
       { "question": "¿Solo diseño o también desarrollo?", "answer": "Ambos. Diseñamos y desarrollamos en Next.js y React. Para MVP, contáctanos." },
       { "question": "¿Cómo funciona la entrega?", "answer": "Revisamos el brief. Borrador inicial en 48 horas. Trabajamos contigo hasta 100% de satisfacción." },
       { "question": "¿Hay límite de solicitudes?", "answer": "¡Sin límite! Pero una solicitud a la vez por calidad. Al aprobar, pasamos a la siguiente." },
@@ -145,9 +143,8 @@
     "seoTitle": "Frack | Desarrollo web, bots IA y e‑commerce",
     "seoBody": "Diseñamos y desarrollamos webs, tiendas online, apps, bots WhatsApp con IA, chatbots Meta y SaaS con IA, de la idea al lanzamiento."
   },
-  "whatsapp": {
-    "label": "Chatear en WhatsApp",
-    "message": "Hola Frack Creations, me gustaría hablar de un proyecto."
+  "meeting": {
+    "label": "Reservar reunión"
   },
   "packageOffer": {
     "metaTitle": "Paquete de crecimiento todo en uno | $9,999",
@@ -158,9 +155,8 @@
     "priceLabel": "Un paquete, un precio",
     "includedTitle": "Qué incluye",
     "cta": "Quiero este paquete",
-    "whatsappMessage": "Hola Frack Creations, me interesa el paquete todo en uno de $9,999.",
     "closingTitle": "¿Listo para empezar?",
-    "closingBody": "Escríbenos por WhatsApp y te explicamos los siguientes pasos.",
+    "closingBody": "Reserva una reunión y te explicamos los siguientes pasos.",
     "items": [
       {
         "title": "Landing page 3D",

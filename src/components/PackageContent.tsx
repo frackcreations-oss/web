@@ -2,12 +2,13 @@
 
 import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Search } from 'lucide-react';
+import { CalendarDays, Check, Search } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/sections/Footer';
-import WhatsAppButton, { WhatsAppIcon } from '@/components/ui/WhatsAppButton';
+import BookingButton from '@/components/ui/BookingButton';
+import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
 import { useDictionary } from '@/context/LocaleContext';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
+import { BOOKING_URL } from '@/lib/booking';
 
 const PRICE = '$9,999';
 
@@ -79,7 +80,6 @@ const SPANS = ['md:col-span-3', 'md:col-span-3', 'md:col-span-2', 'md:col-span-2
 export default function PackageContent() {
     const dict = useDictionary();
     const offer = dict.packageOffer;
-    const whatsappUrl = getWhatsAppUrl(offer.whatsappMessage);
 
     return (
         <main className="pkg-body min-h-screen overflow-x-clip bg-background">
@@ -117,13 +117,13 @@ export default function PackageContent() {
                             ))}
                         </ul>
                         <a
-                            href={whatsappUrl}
+                            href={BOOKING_URL}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn-primary h-14 w-full gap-2 text-[15px] font-semibold no-underline"
                         >
                             {offer.cta}
-                            <WhatsAppIcon className="h-4 w-4" />
+                            <CalendarDays className="h-4 w-4" />
                         </a>
                     </motion.aside>
                 </div>
@@ -163,19 +163,19 @@ export default function PackageContent() {
                         <p className="mt-4 max-w-lg text-[17px] leading-relaxed text-[#080808]/75">{offer.closingBody}</p>
                     </div>
                     <a
-                        href={whatsappUrl}
+                        href={BOOKING_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex h-14 w-full shrink-0 items-center justify-center gap-2 rounded-full bg-[#080808] px-8 text-[15px] font-semibold text-[#F5F5F5] no-underline transition-transform duration-200 hover:scale-[1.02] md:w-fit"
                     >
                         {offer.cta}
-                        <WhatsAppIcon className="h-4 w-4" />
+                        <CalendarDays className="h-4 w-4" />
                     </a>
                 </div>
             </section>
 
             <Footer />
-            <WhatsAppButton />
+            <BookingButton />
         </main>
     );
 }

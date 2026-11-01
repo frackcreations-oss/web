@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
+import { BOOKING_URL } from '@/lib/booking';
 
 const plans = [
     {
@@ -96,12 +96,12 @@ export default function Pricing() {
 
                             <div className="space-y-4">
                                 <a
-                                    href={getWhatsAppUrl("Hi Frack Creations, I'd like to discuss a project.")}
+                                    href={BOOKING_URL}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn-primary w-full h-14 text-[15px] inline-flex items-center justify-center"
                                 >
-                                    Chat on WhatsApp
+                                    Book a Meeting
                                 </a>
                             </div>
                         </motion.div>
