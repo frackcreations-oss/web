@@ -8,7 +8,8 @@
     "work": "Our Work",
     "services": "Services",
     "testimonials": "Testimonials",
-    "bookCall": "WhatsApp"
+    "bookCall": "WhatsApp",
+    "package": "Package"
   },
   "hero": {
     "badge": "Available for New Projects",
@@ -147,6 +148,41 @@
   "whatsapp": {
     "label": "Chat on WhatsApp",
     "message": "Hi Frack Creations, I'd like to discuss a project."
+  },
+  "packageOffer": {
+    "metaTitle": "All-in-One Growth Package | $9,999",
+    "metaDescription": "A 3D landing page, AI chatbot, WhatsApp bot, and Meta and Google ads setup, all in one package for $9,999.",
+    "badge": "All-in-one package",
+    "title": "Everything you need to launch and grow.",
+    "subtitle": "A 3D landing page, an AI chatbot, a WhatsApp bot, and live Meta and Google ad campaigns. Built and set up by our team.",
+    "priceLabel": "One package, one price",
+    "includedTitle": "What's included",
+    "cta": "Get this package",
+    "whatsappMessage": "Hi Frack Creations, I'm interested in the $9,999 all-in-one package.",
+    "closingTitle": "Ready to get started?",
+    "closingBody": "Message us on WhatsApp and we'll walk you through the next steps.",
+    "items": [
+      {
+        "title": "3D Landing Page",
+        "description": "A custom, interactive 3D landing page designed to make your brand stand out and turn visitors into leads."
+      },
+      {
+        "title": "AI Website Chatbot",
+        "description": "An AI assistant on your website, trained on your business, that answers your visitors' questions."
+      },
+      {
+        "title": "WhatsApp Bot",
+        "description": "A bot that works directly inside WhatsApp. We write the prompts and set it all up for you."
+      },
+      {
+        "title": "Meta Ads",
+        "description": "We set up your Facebook and Instagram campaigns and get your ads running."
+      },
+      {
+        "title": "Google Ads",
+        "description": "We set up your Google campaigns and get your ads running."
+      }
+    ]
   },
   "language": {
     "label": "Language"

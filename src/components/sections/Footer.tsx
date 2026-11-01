@@ -14,10 +14,10 @@ export default function Footer() {
 
     const footerLinks = {
         navigation: [
-            { name: dict.footer.navServices, href: "#services" },
-            { name: dict.footer.navWork, href: "#portfolio" },
-            { name: dict.footer.navProcess, href: "#process" },
-            { name: dict.footer.navTestimonials, href: "#testimonials" },
+            { name: dict.footer.navServices, href: `/${locale}#services` },
+            { name: dict.footer.navWork, href: `/${locale}#portfolio` },
+            { name: dict.footer.navProcess, href: `/${locale}#process` },
+            { name: dict.footer.navTestimonials, href: `/${locale}#testimonials` },
         ],
         socials: [
             { name: "Instagram", href: "https://www.instagram.com/frackcreations/", icon: <Instagram size={16} /> },

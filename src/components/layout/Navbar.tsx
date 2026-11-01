@@ -16,10 +16,11 @@ export default function Navbar() {
     const whatsappUrl = getWhatsAppUrl(dict.whatsapp.message);
 
     const navLinks = [
-        { name: dict.nav.process, href: "#process" },
-        { name: dict.nav.work, href: "#portfolio" },
-        { name: dict.nav.services, href: "#services" },
-        { name: dict.nav.testimonials, href: "#testimonials" },
+        { name: dict.nav.process, href: `/${locale}#process` },
+        { name: dict.nav.work, href: `/${locale}#portfolio` },
+        { name: dict.nav.package, href: `/${locale}/package` },
+        { name: dict.nav.services, href: `/${locale}#services` },
+        { name: dict.nav.testimonials, href: `/${locale}#testimonials` },
     ];
 
     useEffect(() => {
