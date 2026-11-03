@@ -10,7 +10,7 @@ import { WhatsAppIcon } from '@/components/ui/WhatsAppIcon';
 import { useDictionary } from '@/context/LocaleContext';
 import { BOOKING_URL } from '@/lib/booking';
 
-const PRICE = '$9,999';
+const PRICE = '$11,676';
 
 /* Text-free illustrations, so they work in every language */
 const Cube = () => (
