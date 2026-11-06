@@ -71,8 +71,9 @@ export default function Testimonials() {
                     </h2>
                 </motion.div>
 
-                {/* 3D tilted marquee: rows drift in opposite directions on a tilted plane */}
-                <div className="testi-stage relative -mx-6 md:mx-0 h-[520px] md:h-[640px] overflow-hidden">
+                {/* 3D tilted marquee: rows drift in opposite directions on a tilted plane.
+                    The quotes are English, so keep them left-to-right even on the Arabic (RTL) page. */}
+                <div dir="ltr" lang="en" className="testi-stage relative -mx-6 md:mx-0 h-[520px] md:h-[640px] overflow-hidden">
                     <div className="testi-plane absolute left-1/2 top-1/2 flex w-[180%] md:w-[150%] flex-col gap-5 md:gap-6">
                         {[0, 1, 2].map((row) => {
                             const items = testimonials.filter((_, i) => i % 3 === row);

@@ -9,7 +9,8 @@
     "services": "Services",
     "testimonials": "Testimonials",
     "bookCall": "Book a Meeting",
-    "package": "Package"
+    "package": "Package",
+    "pricing": "Pricing"
   },
   "hero": {
     "badge": "Available for New Projects",
@@ -177,6 +178,85 @@
       {
         "title": "Google Ads",
         "description": "We set up your Google campaigns and get your ads running."
+      }
+    ]
+  },
+  "servicePricing": {
+    "badge": "Pricing",
+    "title": "Clear prices for every service.",
+    "subtitle": "Pick exactly what you need. Fixed prices for standard builds, starting prices for custom software.",
+    "fromLabel": "Starting at",
+    "saveBadge": "Save $499",
+    "note": "\"Starting at\" prices depend on scope; you get a fixed quote after a short call. Hosting, API and third-party fees are billed separately.",
+    "cta": "Book a Meeting",
+    "items": [
+      {
+        "name": "Landing Page",
+        "description": "A fast, conversion-focused landing page, designed and developed."
+      },
+      {
+        "name": "3D Landing Page",
+        "description": "A custom interactive 3D landing page that makes your brand stand out."
+      },
+      {
+        "name": "AI Website Chatbot",
+        "description": "An AI assistant trained on your business that answers visitors 24/7."
+      },
+      {
+        "name": "3D Landing Page + AI Chatbot",
+        "description": "Both together: an interactive 3D landing page with an AI chatbot built in."
+      },
+      {
+        "name": "WhatsApp AI Bot",
+        "description": "An AI bot inside WhatsApp that replies to customers and captures leads."
+      },
+      {
+        "name": "WordPress Plugin",
+        "description": "A custom WordPress plugin built around your exact workflow."
+      },
+      {
+        "name": "Chrome Extension",
+        "description": "A simple browser extension that automates a task or adds a feature."
+      },
+      {
+        "name": "Complex Chrome Extension",
+        "description": "An advanced extension with a backend, accounts and integrations."
+      },
+      {
+        "name": "Full CRM",
+        "description": "A custom CRM for your team: pipeline, contacts, automations and dashboards."
+      },
+      {
+        "name": "SaaS",
+        "description": "A complete SaaS product with accounts, billing and an admin dashboard."
+      },
+      {
+        "name": "AI SaaS",
+        "description": "A SaaS product powered by AI models, agents and automations."
+      },
+      {
+        "name": "Crypto Trading Bot",
+        "description": "An automated trading bot with exchange integrations and your strategy."
+      },
+      {
+        "name": "Web3 / Crypto Projects",
+        "description": "dApps, smart contracts, DEX and DeFi products."
+      },
+      {
+        "name": "LinkedIn Outbound Acquisition",
+        "description": "Targeted LinkedIn outreach campaigns that book meetings with your ideal clients."
+      },
+      {
+        "name": "High-ROI Ads",
+        "description": "Meta and Google ad campaigns built and optimized for maximum return."
+      },
+      {
+        "name": "Database Cleanup & Ingestion",
+        "description": "We clean, de-duplicate and import your data into one reliable database."
+      },
+      {
+        "name": "Automations",
+        "description": "Workflow automations that connect your tools and remove repetitive work."
       }
     ]
   },

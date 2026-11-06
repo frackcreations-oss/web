@@ -18,6 +18,7 @@ export default function Navbar() {
         { name: dict.nav.process, href: `/${locale}#process` },
         { name: dict.nav.work, href: `/${locale}#portfolio` },
         { name: dict.nav.package, href: `/${locale}/package` },
+        { name: dict.nav.pricing, href: `/${locale}#pricing` },
         { name: dict.nav.services, href: `/${locale}#services` },
         { name: dict.nav.testimonials, href: `/${locale}#testimonials` },
     ];

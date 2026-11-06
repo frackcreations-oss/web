@@ -9,7 +9,8 @@
     "services": "Servicios",
     "testimonials": "Testimonios",
     "bookCall": "Reservar reunión",
-    "package": "Paquete"
+    "package": "Paquete",
+    "pricing": "Precios"
   },
   "hero": {
     "badge": "Disponibles para nuevos proyectos",
@@ -177,6 +178,85 @@
       {
         "title": "Anuncios en Google",
         "description": "Configuramos tus campañas de Google y ponemos tus anuncios en marcha."
+      }
+    ]
+  },
+  "servicePricing": {
+    "badge": "Precios",
+    "title": "Precios claros para cada servicio.",
+    "subtitle": "Elige exactamente lo que necesitas. Precios fijos para proyectos estándar y precios desde para software a medida.",
+    "fromLabel": "Desde",
+    "saveBadge": "Ahorra $499",
+    "note": "Los precios \"desde\" dependen del alcance; recibes una cotización fija tras una breve llamada. Hosting, APIs y servicios de terceros se cobran aparte.",
+    "cta": "Agenda una reunión",
+    "items": [
+      {
+        "name": "Landing Page",
+        "description": "Una landing page rápida y enfocada en conversión, diseñada y desarrollada."
+      },
+      {
+        "name": "Landing Page 3D",
+        "description": "Una landing page 3D interactiva a medida que hace destacar tu marca."
+      },
+      {
+        "name": "Chatbot de IA para tu web",
+        "description": "Un asistente de IA entrenado con tu negocio que responde a tus visitantes 24/7."
+      },
+      {
+        "name": "Landing Page 3D + Chatbot de IA",
+        "description": "Ambos juntos: una landing page 3D interactiva con un chatbot de IA integrado."
+      },
+      {
+        "name": "Bot de IA para WhatsApp",
+        "description": "Un bot de IA dentro de WhatsApp que responde a clientes y capta leads."
+      },
+      {
+        "name": "Plugin de WordPress",
+        "description": "Un plugin de WordPress a medida, creado según tu flujo de trabajo."
+      },
+      {
+        "name": "Extensión de Chrome",
+        "description": "Una extensión sencilla que automatiza una tarea o añade una función."
+      },
+      {
+        "name": "Extensión de Chrome compleja",
+        "description": "Una extensión avanzada con backend, cuentas e integraciones."
+      },
+      {
+        "name": "CRM completo",
+        "description": "Un CRM a medida para tu equipo: pipeline, contactos, automatizaciones y paneles."
+      },
+      {
+        "name": "SaaS",
+        "description": "Un producto SaaS completo con cuentas, pagos y panel de administración."
+      },
+      {
+        "name": "SaaS con IA",
+        "description": "Un producto SaaS impulsado por modelos de IA, agentes y automatizaciones."
+      },
+      {
+        "name": "Bot de trading de criptomonedas",
+        "description": "Un bot de trading automatizado con integración a exchanges y tu estrategia."
+      },
+      {
+        "name": "Proyectos Web3 / cripto",
+        "description": "dApps, contratos inteligentes, DEX y productos DeFi."
+      },
+      {
+        "name": "Captación outbound en LinkedIn",
+        "description": "Campañas de prospección en LinkedIn que agendan reuniones con tus clientes ideales."
+      },
+      {
+        "name": "Anuncios de alto ROI",
+        "description": "Campañas en Meta y Google creadas y optimizadas para el máximo retorno."
+      },
+      {
+        "name": "Depuración e ingesta de bases de datos",
+        "description": "Limpiamos, deduplicamos e importamos tus datos en una base de datos confiable."
+      },
+      {
+        "name": "Automatizaciones",
+        "description": "Automatizaciones de flujos de trabajo que conectan tus herramientas y eliminan tareas repetitivas."
       }
     ]
   },

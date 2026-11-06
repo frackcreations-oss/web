@@ -6,6 +6,7 @@ import Benefits from "@/components/sections/Benefits";
 import Portfolio from "@/components/sections/Portfolio";
 import Testimonials from "@/components/sections/Testimonials";
 import Process from "@/components/sections/Process";
+import ServicePricing from "@/components/sections/ServicePricing";
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
 import Booking from "@/components/sections/Booking";
@@ -26,6 +27,7 @@ export default function HomeContent() {
       </div>
       <Testimonials />
       <Process />
+      <ServicePricing />
       <Booking />
       <FAQ />
       <Footer />
