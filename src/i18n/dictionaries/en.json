@@ -189,6 +189,19 @@
     "saveBadge": "Save $499",
     "note": "\"Starting at\" prices depend on scope; you get a fixed quote after a short call. Hosting, API and third-party fees are billed separately.",
     "cta": "Book a Meeting",
+    "bestValue": "Best value",
+    "popular": "Most popular",
+    "fixedLabel": "Fixed price",
+    "getStarted": "Get started",
+    "customTitle": "Need something custom or a mix of services?",
+    "categories": {
+      "all": "All",
+      "websites": "Websites",
+      "ai": "AI & Bots",
+      "software": "Software",
+      "growth": "Growth & Automation",
+      "web3": "Web3 & Crypto"
+    },
     "items": [
       {
         "name": "Landing Page",

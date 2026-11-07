@@ -189,6 +189,19 @@
     "saveBadge": "Ahorra $499",
     "note": "Los precios \"desde\" dependen del alcance; recibes una cotización fija tras una breve llamada. Hosting, APIs y servicios de terceros se cobran aparte.",
     "cta": "Agenda una reunión",
+    "bestValue": "Mejor valor",
+    "popular": "Más popular",
+    "fixedLabel": "Precio fijo",
+    "getStarted": "Empezar",
+    "customTitle": "¿Necesitas algo a medida o una combinación de servicios?",
+    "categories": {
+      "all": "Todo",
+      "websites": "Webs",
+      "ai": "IA y bots",
+      "software": "Software",
+      "growth": "Crecimiento y automatización",
+      "web3": "Web3 y cripto"
+    },
     "items": [
       {
         "name": "Landing Page",
